@@ -1,12 +1,13 @@
 package npm.sequelize;
 
 import haxe.EitherType;
+import npm.common.StringBool;
 
 typedef FieldOptions = {
   ?type : String,
   ?allowNull : Bool,
   ?defaultValue : Dynamic,
-  ?unique : EitherType<String, Bool>,
+  ?unique : StringBool,
   ?primaryKey : Bool,
   ?field : String,
   ?autoIncrement : Bool,

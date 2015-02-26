@@ -1,2 +1,2 @@
 # npm
-useful NPM wrappers
+NPM types for Haxe
