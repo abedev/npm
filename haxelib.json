@@ -1,0 +1,14 @@
+{
+  "name": "npm",
+  "url": "https://github.com/abedev/npm",
+  "license": "MIT",
+  "classPath": "src",
+  "tags": ["nodejs", "npm"],
+  "description": "NPM types for Haxe",
+  "releasenote": "First release.",
+  "version": "0.0.1",
+  "contributors": ["fponticelli"],
+  "dependencies" : {
+    "hxnodejs" : ""
+  }
+}
