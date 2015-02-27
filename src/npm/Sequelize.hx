@@ -8,7 +8,8 @@ extern class Sequelize {
   function new(database : String, username : String, password : String, options : DatabaseOptions) : Void;
   function define<T : ModelInstance<T>>(modelName : String, attributes : Dynamic<FieldOptions>, ?options : ModelOptions) : Model<T>;
 
-  static var STRING(default, null) : String;
+  static function STRING() : DataType;
+  static function INTEGER() : DataType;
 }
 
 typedef DatabaseOptions = {

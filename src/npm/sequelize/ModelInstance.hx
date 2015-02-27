@@ -9,7 +9,7 @@ extern class ModelInstance<T : ModelInstance<T>> {
   function isNewRecord() : Bool;
   function Model() : Model<T>;
   function sequelize() : Sequelize;
-  function isDeleted() : Bool;
+  var isDeleted : Bool;
   function values() : Dynamic;
   function isDirty() : Bool;
   function primaryKeyValues() : Dynamic;
@@ -22,7 +22,7 @@ extern class ModelInstance<T : ModelInstance<T>> {
   function changed(key : String) : Bool;
   function previous(key : String) : Dynamic;
 
-  function save(?options : { ?fields : {}, ?silent : Bool, ?validate : Bool, ?transaction : Dynamic }) : Promise<Dynamic>; // either ValidationError or ModelInstance
+  function save(?options : { ?fields : {}, ?silent : Bool, ?validate : Bool, ?transaction : Dynamic }) : Promise<T>; // either ValidationError or ModelInstance
   function reload() : Promise<T>;
   function update(updated : Dynamic, options : Dynamic) : Promise<T>;
   function destroy() : Promise<Nil>;

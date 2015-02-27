@@ -4,7 +4,7 @@ import haxe.EitherType;
 import npm.common.StringBool;
 
 typedef FieldOptions = {
-  ?type : String,
+  ?type : DataType,
   ?allowNull : Bool,
   ?defaultValue : Dynamic,
   ?unique : StringBool,
