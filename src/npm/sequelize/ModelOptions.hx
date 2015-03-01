@@ -1,16 +1,33 @@
 package npm.sequelize;
 
+import haxe.EitherType;
+
 typedef ModelOptions = {
   ?paranoid : Bool,
   ?timestamps : Bool,
   ?underscored : Bool,
   ?freezeTableName : Bool,
-  ?tableName : String,
   ?name : {
     ?singular : String -> String,
     ?plural : String -> String
   },
-  ?indexes : Array<IndexOptions>
+  ?indexes : Array<IndexOptions>,
+  ?createdAt : EitherType<String, Bool>,
+  ?updatedAt : EitherType<String, Bool>,
+  ?deletedAt : EitherType<String, Bool>,
+  ?tableName : String,
+  //?getterMethods // TODO
+  //?setterMethods // TODO
+  //?instanceMethods // TODO
+  //?classMethods // TODO
+  ?schema : String,
+  ?engine : String,
+  ?charset : String,
+  ?comment : String,
+  ?collate : String,
+  ?initialAutoIncrement : String, // MySQL
+  //?hooks // TODO
+  //?validat // TODO
 }
 
 typedef IndexOptions = {
