@@ -3,7 +3,7 @@ package npm.sequelize;
 import haxe.EitherType;
 import npm.common.StringBool;
 
-typedef FieldOptions = {
+typedef ColumnOptions = {
   ?type : DataType,
   ?allowNull : Bool,
   ?defaultValue : Dynamic,
