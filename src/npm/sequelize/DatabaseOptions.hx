@@ -6,11 +6,6 @@ typedef DatabaseOptions = {
   dialect : DatabaseDialect,
   ?dialectModulePath : String,
   ?dialectOptions : {},
-  ?pool : {
-    max : Int,
-    min : Int,
-    idle : Int
-  },
   ?query : {},
   ?port : Int,
   ?protocol : String,
@@ -25,7 +20,7 @@ typedef DatabaseOptions = {
   ?pool : {
     ?maxConnections : Int,
     ?minConnections : Int,
-    ?maxIdleTime : Int
+    ?maxIdleTime : Int,
     ?validateConnection : haxe.Constraints.Function
   },
   ?quoteIdentifiers : Bool
