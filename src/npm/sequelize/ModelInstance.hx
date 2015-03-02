@@ -2,7 +2,7 @@ package npm.sequelize;
 
 import thx.core.Nil;
 
-extern class ModelInstance<T : > {
+extern class ModelInstance<T : ModelInstance<T>> {
   var createdAt : Date;
   var updatedAt : Date;
 
