@@ -33,6 +33,37 @@ extern class Sequelize {
   //where(attr, [comparator='='], logic) -> Sequelize.where
   //transaction([options={}]) -> Promise
 
-  static function STRING() : DataType;
-  static function INTEGER() : DataType;
+  static function STRING(?length : Int, ?binary : Bool) : DataType;
+  static function CHAR(?length : Int, ?binary : Bool) : DataType;
+  static function INTEGER(?length : Int) : DataType;
+  static function BIGINT(?length : Int) : DataType;
+  static function FLOAT(?length : Int, ?decimals : Int) : DataType;
+  static function DECIMAL(?precision : Int, ?scale : Int) : DataType;
+  static function TEXT() : DataType;
+  static function NUMBER() : DataType;
+  static function BOOLEAN() : DataType;
+  static function TIME() : DataType;
+  static function DATE() : DataType;
+  static function DATEONLY() : DataType;
+  static function HSTORE() : DataType;
+  static function JSONTYPE() : DataType;
+  static function JSONB() : DataType;
+  static function NOW() : DataType;
+  static function BLOB(?length : Int) : DataType;
+  static function RANGE(subtype : DataType) : DataType; // TODO check
+  static function UUID() : DataType;
+  static function UUIDV1() : DataType;
+  static function UUIDV4() : DataType;
+  static function VIRTUAL() : DataType;
+  static function ENUM(value : haxe.Rest<String>) : DataType;
+  static function ARRAY(type : DataType) : DataType;
+}
+
+typedef NumberOptions = {
+  ?length : Int,
+  ?zerofill : Bool,
+  ?decimals : Int,
+  ?precision : Int,
+  ?scale : Int,
+  ?unsigned : Bool
 }
