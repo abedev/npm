@@ -12,7 +12,9 @@ extern class Sequelize {
   //function getMigrator(?options : MigratorOptions, ?force : Bool) : Migrator; // TODO
   function model<T : ModelInstance<T>>(modelName : String) : Model<T>;
   function isDefined(modelName : String) : Bool;
-  function import<T : ModelInstance<T>>(path : String) : Model<T>;
+  inline function importModel<T : ModelInstance<T>>(path : String) : Model<T>
+    return untyped this["import"](path);
+
   //function query(sql : String, ...) // TODO
   //function set(variables : {}, ?options : { transaction : Transaction }) : Promise<?>; // TODO
   function escape(value : String) : String;
