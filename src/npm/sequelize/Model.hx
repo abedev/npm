@@ -34,6 +34,11 @@ extern class Model<T : ModelInstance<T>> {
   //destroy(options) -> Promise<undefined>
   function destroy(options : DestroyOptions) : Promise<Nil>;
 
+  function hasOne<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : AssociationOptions) : Void; // check return type
+  function belongsTo<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : AssociationOptions) : Void; // check return type
+  function hasMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : AssociationOptions) : Void; // check return type
+  function belongsToMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : AssociationOptions) : Void; // check return type
+
   //aggregate(field, aggregateFunction, [options]) -> Promise<options.dataType|object>
 
   //schema(schema, [options]) -> this
@@ -45,7 +50,7 @@ typedef Query = {
   ?where : Dynamic,
   ?attributes : Array<String>,
   ?paranoid : Bool,
-  //?include : Array<Object | Model> TODO
+  ?include : Array<{ model : Model<Dynamic>, as : String }>,
   //?order : String | Array | Sequelize.fn
   ?limit : Int,
   ?offset : Int,
@@ -59,4 +64,13 @@ typedef QueryOptions = {
 
 typedef DestroyOptions = {
   ?where : Dynamic
+}
+
+typedef AssociationOptions = {
+  ?hooks : Bool,
+  ?as : String,
+  ?foreignKey : haxe.EitherType<String, {}>,
+  ?onDelete : String,
+  ?onUpdate : String,
+  ?constraints : Bool
 }
