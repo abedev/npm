@@ -50,7 +50,7 @@ typedef Query = {
   ?where : Dynamic,
   ?attributes : Array<String>,
   ?paranoid : Bool,
-  //?include : Array<Object | Model> TODO
+  ?include : Array<{ model : Model<Dynamic>, as : String }>,
   //?order : String | Array | Sequelize.fn
   ?limit : Int,
   ?offset : Int,
