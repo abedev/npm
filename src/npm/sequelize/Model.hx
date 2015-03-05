@@ -21,7 +21,7 @@ extern class Model<T : ModelInstance<T>> {
   //findOrCreate(options, [queryOptions]) -> Promise<Instance|created>
   //upsert(values, [options]) -> Promise<created>
   //bulkCreate(records, [options]) -> Promise<Array<Instance>>
-  function update(values : {}, options : {}) :Promise<Array<Int>>
+  function update(values : {}, options : {}) : Promise<Array<Int>>;
   //describe() -> Promise
 
   inline function findAttributes<TAt>(query : EitherType<Int, Query>) : Promise<TAt>
