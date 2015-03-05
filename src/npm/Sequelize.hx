@@ -22,7 +22,7 @@ extern class Sequelize {
   //function showAllSchemas() : Promise<?>; // TODO
   //function dropSchema(schema : String) : Promise<?>; // TODO
   //function dropAllSchemas() : Promise<?>; // TODO
-  //function sync(?options : SyncOptions) : Promise<?>; // TODO
+  function sync(?options : SyncOptions) : Promise<Sequelize>;
   //function drop(?options : DropOptions) : Promise<?>; // TODO
   //function authenticate() : Promise<?> // TODO
   //function fn(fn : String, ...) // TODO
