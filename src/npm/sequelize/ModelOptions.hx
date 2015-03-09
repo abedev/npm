@@ -1,6 +1,6 @@
 package npm.sequelize;
 
-import haxe.EitherType;
+import haxe.extern.EitherType;
 
 typedef ModelOptions = {
   ?paranoid : Bool,

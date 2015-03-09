@@ -1,6 +1,6 @@
 package npm.jsonwebtoken;
 
-import haxe.EitherType;
+import haxe.extern.EitherType;
 import npm.common.StringBuffer;
 
 typedef JWTPayload = EitherType<StringBuffer, {}>;

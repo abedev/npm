@@ -1,7 +1,7 @@
 package npm;
 
 import js.Error;
-import haxe.EitherType;
+import haxe.extern.EitherType;
 import npm.common.StringInt;
 
 @:jsRequire("bcryptjs")

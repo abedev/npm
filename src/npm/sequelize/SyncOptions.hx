@@ -1,7 +1,7 @@
 package npm.sequelize;
 
 import haxe.Constraints.Function;
-import haxe.EitherType;
+import haxe.extern.EitherType;
 
 typedef SyncOptions = {
   ?force : Bool,

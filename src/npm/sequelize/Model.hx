@@ -1,6 +1,6 @@
 package npm.sequelize;
 
-import haxe.EitherType;
+import haxe.extern.EitherType;
 import thx.core.Nil;
 
 extern class Model<T : ModelInstance<T>> {
@@ -69,7 +69,7 @@ typedef DestroyOptions = {
 typedef AssociationOptions = {
   ?hooks : Bool,
   ?as : String,
-  ?foreignKey : haxe.EitherType<String, {}>,
+  ?foreignKey : EitherType<String, {}>,
   ?onDelete : String,
   ?onUpdate : String,
   ?constraints : Bool

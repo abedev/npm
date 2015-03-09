@@ -1,3 +1,3 @@
 package npm.common;
 
-typedef StringInt = haxe.EitherType<String, Int>;
+typedef StringInt = haxe.extern.EitherType<String, Int>;

@@ -1,3 +1,3 @@
 package npm.common;
 
-typedef StringBool = haxe.EitherType<String, Bool>;
+typedef StringBool = haxe.extern.EitherType<String, Bool>;

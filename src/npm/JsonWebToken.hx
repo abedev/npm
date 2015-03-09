@@ -1,6 +1,6 @@
 package npm;
 
-import haxe.EitherType;
+import haxe.extern.EitherType;
 import js.node.Buffer;
 import npm.common.StringBuffer;
 import npm.jsonwebtoken.*;

@@ -57,7 +57,7 @@ extern class Sequelize {
   static function UUIDV1() : DataType;
   static function UUIDV4() : DataType;
   static function VIRTUAL() : DataType;
-  static function ENUM(value : haxe.Rest<String>) : DataType;
+  static function ENUM(value : haxe.extern.Rest<String>) : DataType;
   static function ARRAY(type : DataType) : DataType;
 }
 
