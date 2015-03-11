@@ -26,6 +26,10 @@ extern class Server {
 
   //Server#bind(srv:engine#Server):Server
   function onconnection(socket : Socket) : Server;
+
+  function of(nsp : String) : Namespace;
+
+  function emit(name : String, data : {}) : Server; // TODO check return
 }
 
 typedef ServerOptions = {
