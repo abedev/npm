@@ -92,7 +92,9 @@ extern class GM {
   function enhance() : GM;
   // function endian() : GM;
   function equalize() : GM;
-  // function extent() : GM;
+  @:overload(function(width : Int, height : Int, x : Int, y : Int) : GM {})
+  @:overload(function(width : Int, height : Int, x : Int) : GM {})
+  function extent(width : Int, height : Int) : GM;
   // function file() : GM;
   // function filter() : GM;
   function flatten() : GM;
@@ -104,7 +106,7 @@ extern class GM {
   // function gamma() : GM;
   // function gaussian() : GM;
   // function geometry() : GM;
-  // function gravity() : GM;
+  function gravity(value : Gravity) : GM;
   // function greenPrimary() : GM;
   // function highlightColor() : GM;
   // function highlightStyle() : GM;
@@ -167,7 +169,7 @@ extern class GM {
   // function repage() : GM;
   function resample(horizontal : Int, vertical : Int) : GM;
 
-  @:overload(function(width : Null<Int>, height : Int, options : ResizeOptions) : GM {})
+  @:overload(function(width : Null<Int>, height : Int, options : GeometryOptions) : GM {})
   @:overload(function(width : Null<Int>, height : Int) : GM {})
   function resize(width : Int) : GM;
   // function roll() : GM;
