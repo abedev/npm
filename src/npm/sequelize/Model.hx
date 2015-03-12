@@ -36,8 +36,8 @@ extern class Model<T : ModelInstance<T>> {
 
   function hasOne<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : AssociationOptions) : Void; // check return type
   function belongsTo<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : AssociationOptions) : Void; // check return type
-  function hasMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : AssociationOptions) : Void; // check return type
-  function belongsToMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : AssociationOptions) : Void; // check return type
+  function hasMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : MultiAssociationOptions) : Void; // check return type
+  function belongsToMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : MultiAssociationOptions) : Void; // check return type
 
   //aggregate(field, aggregateFunction, [options]) -> Promise<options.dataType|object>
 
@@ -73,4 +73,10 @@ typedef AssociationOptions = {
   ?onDelete : String,
   ?onUpdate : String,
   ?constraints : Bool
+}
+
+typedef MultiAssociationOptions = { > AssociationOptions,
+  ?through : EitherType<String, ModelInstance<Dynamic>>,
+  ?otherKey : EitherType<String, {}>,
+  ?scope : {}
 }
