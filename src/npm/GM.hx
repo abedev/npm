@@ -1,8 +1,6 @@
 package npm;
 
 import js.node.Buffer;
-import js.node.stream.Readable;
-import js.node.stream.Writeable;
 import npm.common.StringNumber;
 import npm.gm.*;
 import js.Error;
@@ -35,9 +33,9 @@ extern class GM {
   // - writes the processed image data to the specified filename
   function write(path : String, callback : Error -> Void) : Void;
   // - provides a ReadableStream with the processed image data
-  function stream(err : Error, stdout : Writeable, stderr : Writeable) : Void;
+  function stream(callback : Error -> Writable -> Writable -> Void) : Void;
   // - returns the image as a Buffer instead of a stream
-  function toBuffer(?format : String, Error -> Buffer -> Void) : Void;
+  function toBuffer(?format : String, callback : Error -> Buffer -> Void) : Void;
 
   // manipulation
   function adjoin() : GM;
