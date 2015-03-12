@@ -181,7 +181,7 @@ extern class GM {
   // function segment() : GM;
   function sepia() : GM;
   // function set() : GM;
-  // function setFormat() : GM;
+  function setFormat(format : String) : GM;
   // function shade() : GM;
   // function shadow() : GM;
   function sharedMemory() : GM;
