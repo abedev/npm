@@ -167,8 +167,11 @@ extern class GM {
   function remote() : GM;
   function render() : GM;
   // function repage() : GM;
-  // function resample() : GM;
-  // function resize() : GM;
+  function resample(horizontal : Int, vertical : Int) : GM;
+
+  @:overload(function(width : Null<Int>, height : Int, options : ResizeOptions) : GM {})
+  @:overload(function(width : Null<Int>, height : Int) : GM {})
+  function resize(width : Int) : GM;
   // function roll() : GM;
   // function rotate() : GM;
   // function sample() : GM;
