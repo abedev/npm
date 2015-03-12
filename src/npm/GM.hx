@@ -33,7 +33,7 @@ extern class GM {
   // - writes the processed image data to the specified filename
   function write(path : String, callback : Error -> Void) : Void;
   // - provides a ReadableStream with the processed image data
-  function stream(callback : Error -> Writable -> Writable -> Void) : Void;
+  function stream(callback : Error -> Readable -> Readable -> Void) : Void;
   // - returns the image as a Buffer instead of a stream
   function toBuffer(?format : String, callback : Error -> Buffer -> Void) : Void;
 
