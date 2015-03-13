@@ -39,10 +39,9 @@ typedef IndexOptions = {
   ?fields : Array<IndexFieldOptions>
 }
 
-// TODO are these optionals
 typedef IndexFieldOptions = {
   attribute : String,
-  length : Int,
-  order : Dynamic, // TODO ?
-  collate : Dynamic, // TODO ?
+  ?length : Int,
+  ?order : Dynamic, // TODO ?
+  ?collate : Dynamic, // TODO ?
 }
