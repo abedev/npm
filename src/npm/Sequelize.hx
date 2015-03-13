@@ -48,7 +48,7 @@ extern class Sequelize {
   static function DATE() : DataType;
   static function DATEONLY() : DataType;
   static function HSTORE() : DataType;
-  static function JSONTYPE() : DataType;
+  static function JSON() : DataType;
   static function JSONB() : DataType;
   static function NOW() : DataType;
   static function BLOB(?length : Int) : DataType;
