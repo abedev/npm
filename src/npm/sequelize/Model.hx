@@ -47,10 +47,10 @@ extern class Model<T : ModelInstance<T>> {
 }
 
 typedef Query = {
-  ?where : Dynamic,
+  ?where : {},
   ?attributes : Array<String>,
   ?paranoid : Bool,
-  ?include : Array<{ model : Model<Dynamic>, as : String }>,
+  ?include : Array<IncludeOptions>,
   //?order : String | Array | Sequelize.fn
   ?limit : Int,
   ?offset : Int,
@@ -58,12 +58,18 @@ typedef Query = {
 
 }
 
+typedef IncludeOptions = {
+  model : Model<Dynamic>,
+  as : String,
+  ?where : {}
+}
+
 typedef QueryOptions = {
   lock : String
 }
 
 typedef DestroyOptions = {
-  ?where : Dynamic
+  ?where : {}
 }
 
 typedef AssociationOptions = {
