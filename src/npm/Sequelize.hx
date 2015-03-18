@@ -1,6 +1,7 @@
 package npm;
 
 import npm.sequelize.*;
+import js.Promise;
 
 @:jsRequire("sequelize")
 extern class Sequelize {

@@ -1,6 +1,7 @@
 package npm.sequelize;
 
 import thx.core.Nil;
+import js.Promise;
 
 extern class ModelInstance<T : ModelInstance<T>> {
   var createdAt : Date;

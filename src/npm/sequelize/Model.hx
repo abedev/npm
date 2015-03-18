@@ -2,6 +2,7 @@ package npm.sequelize;
 
 import haxe.extern.EitherType;
 import thx.core.Nil;
+import js.Promise;
 
 extern class Model<T : ModelInstance<T>> {
   function sync() : Promise<Model<T>>;
