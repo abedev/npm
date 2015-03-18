@@ -34,7 +34,7 @@ extern class Sequelize {
   //or(args) -> Sequelize.or
   //json(conditions, [value]) -> Sequelize.json
   //where(attr, [comparator='='], logic) -> Sequelize.where
-  //transaction([options={}]) -> Promise
+  function transaction(?options : TransactionOptions, ?callback : Transaction -> Promise<Dynamic>) : Promise<Transaction>;
 
   static function STRING(?length : Int, ?binary : Bool) : DataType;
   static function CHAR(?length : Int, ?binary : Bool) : DataType;
