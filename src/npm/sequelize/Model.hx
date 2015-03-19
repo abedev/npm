@@ -62,7 +62,8 @@ typedef Query = {
 typedef IncludeOptions = {
   model : Model<Dynamic>,
   as : String,
-  ?where : {}
+  ?where : {},
+  ?include : Array<EitherType<IncludeOptions, Model<Dynamic>>>
 }
 
 typedef QueryOptions = {
