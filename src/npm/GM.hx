@@ -244,3 +244,8 @@ extern class GM {
   // function strokeWidth() : GM;
   // function setDraw() : GM;
 }
+
+@:jsRequire("gm", "subClass({ imageMagick : true })")
+extern class ImageMagick extends GM {
+
+}
