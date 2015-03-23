@@ -26,8 +26,8 @@ extern class Sequelize {
   function sync(?options : SyncOptions) : Promise<Sequelize>;
   //function drop(?options : DropOptions) : Promise<?>; // TODO
   //function authenticate() : Promise<?> // TODO
-  //function fn(fn : String, ...) // TODO
-  //col(col) -> Sequelize.col
+  function fn(functionName : String, args : haxe.extern.Rest<FunctionColumn>) : SequelizeFunction;
+  function col(colName : String) : FunctionColumn;
   //cast(val, type) -> Sequelize.cast
   //literal(val) -> Sequelize.literal
   //and(args) -> Sequelize.and
