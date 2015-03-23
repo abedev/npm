@@ -52,7 +52,7 @@ typedef Query = {
   ?attributes : Array<String>,
   ?paranoid : Bool,
   ?include : Array<IncludeOptions>,
-  ?order : EitherType<String, EitherType<Array<String>, EitherType<Array<Array<String>>, SequelizeFunction>>>,
+  ?order : EitherType<String, EitherType<Array<String>, EitherType<Array<Array<Dynamic>>, SequelizeFunction>>>,
   ?limit : Int,
   ?offset : Int,
   //?transaction : Transaction
