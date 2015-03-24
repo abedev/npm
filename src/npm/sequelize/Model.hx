@@ -33,7 +33,7 @@ extern class Model<T : ModelInstance<T>> {
   function build(?defaults : {}) : T;
 
   //destroy(options) -> Promise<undefined>
-  function destroy(options : DestroyOptions) : Promise<Nil>;
+  function destroy(options : DestroyOptions) : Promise<Array<Int>>;
 
   function hasOne<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : AssociationOptions) : Void; // check return type
   function belongsTo<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : AssociationOptions) : Void; // check return type
