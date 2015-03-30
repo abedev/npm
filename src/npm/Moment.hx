@@ -1,5 +1,7 @@
 package npm;
 
+import npm.moment.*;
+
 // import haxe.extern.EitherType;
 import haxe.extern.Rest;
 
@@ -22,8 +24,13 @@ extern class Moment {
   function min(args : Rest<Moment>) : Moment;
 
   // math
-  // function add
-  // function subtract
+  @:overload(function(options : Dynamic<Float>) : Moment {})
+  @:overload(function(duration : Duration) : Moment {})
+  function add(value : Float, unit : String) : Moment;
+
+  @:overload(function(options : Dynamic<Float>) : Moment {})
+  @:overload(function(duration : Duration) : Moment {})
+  function subtract(value : Float, unit : String) : Moment;
 
   // time manipulation
   function millisecond(?setTo : Float) : Moment;
@@ -53,4 +60,11 @@ extern class Moment {
   // function weekYear(?Number) : Moment;
   // function isoWeekYear(?Number) : Moment;
   // funciton weeksInYear() : Moment;
+
+  @:overload(function(duration : String) : Moment {})
+  @:overload(function(options : Dynamic<Float>) : Moment {})
+  @:overload(function(duration : Float) : Moment {})
+  function duration(value : Float, unit : String) : Duration;
+
+  function clone() : Moment;
 }
