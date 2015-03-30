@@ -5,9 +5,19 @@ import npm.moment.*;
 // import haxe.extern.EitherType;
 import haxe.extern.Rest;
 
-@:jsRequire("moment")
+#if(!norequire) @:jsRequire("moment") #end
 extern class Moment {
-  @:selfCall function new(?dateString : String, ?format : String) : Void;
+  static var ISO_8601(default, null) : String;
+
+  @:overload(function(value : String) : Void {})
+  @:overload(function(value : String, formats : Array<String>, ?locale : String, ?strict : Bool) : Void {})
+  @:overload(function(value : String, format : String, ?locale : String, ?strict : Bool) : Void {})
+  @:overload(function(value : Float, format : String) : Void {})
+  @:overload(function(options : Dynamic<Float>) : Void {})
+  @:overload(function(milliseconds : Float) : Void {})
+  @:overload(function(date : Date) : Void {})
+  @:overload(function(values : Array<Float>) : Void {})
+  @:selfCall function new() : Void;
 
   function isValid() : Bool;
 
@@ -16,8 +26,9 @@ extern class Moment {
   function fromNow(?withoutSuffix : Bool) : String;
 
   // get and set
-  function get(interval : String) : Dynamic; // TODO: really? is it always an Int?
-  function set(args: Dynamic) : Void; // TODO: does this also return Moment?
+  function get(interval : String) : Float;
+  @:overload(function(options : Dynamic<Float>) : Moment {})
+  function set(unit : String, value : Float) : Moment;
 
   // comparison
   function max(args : Rest<Moment>) : Moment;
