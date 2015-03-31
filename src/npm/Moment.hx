@@ -5,7 +5,8 @@ import npm.moment.*;
 // import haxe.extern.EitherType;
 import haxe.extern.Rest;
 
-#if(!norequire) @:jsRequire("moment") #end
+#if(norequire) @:native("moment")
+#else @:jsRequire("moment") #end
 extern class Moment {
   static var ISO_8601(default, null) : String;
 
