@@ -20,6 +20,14 @@ extern class Moment {
   @:overload(function(values : Array<Float>) : Void {})
   @:selfCall function new() : Void;
 
+  @:overload(function(value : Float) : Moment {})
+  @:overload(function(value : Array<Float>) : Moment {})
+  @:overload(function(value : String, ?format : String, ?locale : String, ?strict : Bool) : Moment {})
+  @:overload(function(value : String, ?formats : Array<String>, ?locale : String, ?strict : Bool) : Moment {})
+  @:overload(function(moment : Moment) : Moment {})
+  @:overload(function(date : Date) : Moment {})
+  static function utc() : Moment;
+
   function isValid() : Bool;
 
   // format
