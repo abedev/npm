@@ -5,7 +5,8 @@ import npm.moment.*;
 // import haxe.extern.EitherType;
 import haxe.extern.Rest;
 
-#if(!norequire) @:jsRequire("moment") #end
+#if(norequire) @:native("moment")
+#else @:jsRequire("moment") #end
 extern class Moment {
   static var ISO_8601(default, null) : String;
 
@@ -18,6 +19,14 @@ extern class Moment {
   @:overload(function(date : Date) : Void {})
   @:overload(function(values : Array<Float>) : Void {})
   @:selfCall function new() : Void;
+
+  @:overload(function(value : Float) : Moment {})
+  @:overload(function(value : Array<Float>) : Moment {})
+  @:overload(function(value : String, ?format : String, ?locale : String, ?strict : Bool) : Moment {})
+  @:overload(function(value : String, ?formats : Array<String>, ?locale : String, ?strict : Bool) : Moment {})
+  @:overload(function(moment : Moment) : Moment {})
+  @:overload(function(date : Date) : Moment {})
+  static function utc() : Moment;
 
   function isValid() : Bool;
 
@@ -33,6 +42,12 @@ extern class Moment {
   // comparison
   function max(args : Rest<Moment>) : Moment;
   function min(args : Rest<Moment>) : Moment;
+
+  @:overload(function(value : String, ?unit : String, ?floatingPoint : Bool) : Float {})
+  @:overload(function(value : Float, ?unit : String, ?floatingPoint : Bool) : Float {})
+  @:overload(function(value : Date, ?unit : String, ?floatingPoint : Bool) : Float {})
+  @:overload(function(value : Array<Float>, ?unit : String, ?floatingPoint : Bool) : Float {})
+  function diff(value : Moment, ?unit : String, ?floatingPoint : Bool) : Float;
 
   // math
   @:overload(function(options : Dynamic<Float>) : Moment {})
