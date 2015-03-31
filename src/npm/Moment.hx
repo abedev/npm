@@ -43,6 +43,12 @@ extern class Moment {
   function max(args : Rest<Moment>) : Moment;
   function min(args : Rest<Moment>) : Moment;
 
+  @:overload(function(value : String, ?unit : String, ?floatingPoint : Bool) : Float {})
+  @:overload(function(value : Float, ?unit : String, ?floatingPoint : Bool) : Float {})
+  @:overload(function(value : Date, ?unit : String, ?floatingPoint : Bool) : Float {})
+  @:overload(function(value : Array<Float>, ?unit : String, ?floatingPoint : Bool) : Float {})
+  function diff(value : Moment, ?unit : String, ?floatingPoint : Bool) : Float;
+
   // math
   @:overload(function(options : Dynamic<Float>) : Moment {})
   @:overload(function(duration : Duration) : Moment {})
