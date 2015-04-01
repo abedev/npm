@@ -1,12 +1,11 @@
 package npm.sequelize;
 
 import haxe.extern.EitherType;
-import thx.core.Nil;
 import js.Promise;
 
 extern class Model<T : ModelInstance<T>> {
   function sync() : Promise<Model<T>>;
-  function drop(?options : DropOptions) : Promise<Nil>; // TODO Nil?
+  function drop(?options : DropOptions) : Promise<Void>; // TODO Void?
   function find(query : EitherType<Int, Query>) : Promise<T>;
   //findAll([options], [queryOptions]) -> Promise<Array<Instance>>
   function findAll(?query : Query, ?options : QueryOptions) : Promise<Array<T>>; // TODO options

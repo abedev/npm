@@ -1,6 +1,5 @@
 package npm.sequelize;
 
-import thx.core.Nil;
 import js.Promise;
 
 extern class ModelInstance<T : ModelInstance<T>> {
@@ -27,7 +26,7 @@ extern class ModelInstance<T : ModelInstance<T>> {
   function reload() : Promise<T>;
   function update(updated : Dynamic, options : Dynamic) : Promise<T>; // TODO
   //destroy([options={}]) -> Promise<undefined> // TODO
-  function destroy() : Promise<Nil>;
+  function destroy() : Promise<Void>;
   //restore([options={}]) -> Promise<undefined> // TODO
   //increment(fields, [options]) -> Promise<this> // TODO
   //decrement(fields, [options]) -> Promise // TODO
