@@ -5,7 +5,7 @@ import npm.searchindex.*;
 
 @:jsRequire("search-index")
 extern class SearchIndex {
-	@:selfCall new(options : Options) : Void;
+	@:selfCall function new(options : Options) : Void;
 
 	// TODO check return types for all functions
 	@:overload(function(options : AddOptions, data : Data, callback : Callback0) : Void {})
@@ -17,10 +17,10 @@ extern class SearchIndex {
 	function match(beginsWith : String, callback : Callback<Array<String>>) : Void;
 	// TODO check that message type is String
 	function tellMeAboutMySearchIndex(callback : String -> Void) : Void;
-	function empty(callback : Callback<0>) : Void;
+	function empty(callback : Callback0) : Void;
 #if hxnodejs
-	function snapshot(callback : js.node.stream.Readable) : Void;
+	function snapshot(callback : js.node.stream.Readable<Dynamic>) : Void;
 	// TODO check that message type is String
-	function replicate(source : js.node.stream.Readable, callback : String -> Void) : Void;
+	function replicate(source : js.node.stream.Readable<Dynamic>, callback : String -> Void) : Void;
 #end
 }
