@@ -9,7 +9,7 @@ extern class Sequelize {
   function new(database : String, username : String, password : String, ?options : DatabaseOptions) : Void;
   function define<T : ModelInstance<T>>(modelName : String, attributes : Dynamic<ColumnOptions>, ?options : ModelOptions) : Model<T>;
   function getDialect() : String;
-  //function getQueryInterface() : QueryInterface; // TODO
+  function getQueryInterface() : QueryInterface;
   //function getMigrator(?options : MigratorOptions, ?force : Bool) : Migrator; // TODO
   function model<T : ModelInstance<T>>(modelName : String) : Model<T>;
   function isDefined(modelName : String) : Bool;
