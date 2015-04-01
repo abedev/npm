@@ -3,5 +3,6 @@ package npm.searchindex;
 typedef Options = {
 	?indexPath : String,
 	?logLevel : String,
-	?logSilent : Bool
+	?logSilent : Bool,
+	?db : npm.LevelDB
 }
