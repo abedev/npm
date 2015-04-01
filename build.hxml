@@ -1,0 +1,22 @@
+-cp src
+--no-output
+-D doc-gen
+-D display
+-D dox
+-dce no
+-lib hxnodejs
+-xml xml/js.xml
+-js _
+npm.AWS
+npm.BCryptjs
+npm.GM
+npm.JsonWebToken
+npm.LevelDB
+npm.Mime
+npm.Moment
+npm.NodeMailer
+npm.QS
+npm.RandToken
+npm.Request
+npm.SearchIndex
+npm.Sequelize
