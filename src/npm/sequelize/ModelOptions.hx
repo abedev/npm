@@ -16,10 +16,10 @@ typedef ModelOptions = {
   ?updatedAt : EitherType<String, Bool>,
   ?deletedAt : EitherType<String, Bool>,
   ?tableName : String,
-  //?getterMethods // TODO
-  //?setterMethods // TODO
-  //?instanceMethods // TODO
-  //?classMethods // TODO
+  //?getterMethods : Dynamic<haxe.Constraints.Function>,
+  //?setterMethods : Dynamic<haxe.Constraints.Function>,
+  ?instanceMethods : Dynamic<haxe.Constraints.Function>,
+  ?classMethods : Dynamic<haxe.Constraints.Function>,
   ?schema : String,
   ?engine : String,
   ?charset : String,
