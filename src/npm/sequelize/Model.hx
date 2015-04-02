@@ -8,8 +8,8 @@ extern class Model<T : ModelInstance<T>> {
   function drop(?options : DropOptions) : Promise<Void>; // TODO Void?
   function find(query : EitherType<Int, Query>) : Promise<T>;
   //findAll([options], [queryOptions]) -> Promise<Array<Instance>>
-  function findAll(?query : Query, ?options : QueryOptions) : Promise<Array<T>>; // TODO options
-  function findOne(?query : EitherType<Int, Query>, ?options : QueryOptions) : Promise<T>;
+  function findAll(?query : Query, ?options : ModelQueryOptions) : Promise<Array<T>>; // TODO options
+  function findOne(?query : EitherType<Int, Query>, ?options : ModelQueryOptions) : Promise<T>;
   function count(?query : Query) : Promise<Int>;
   //findAndCount([findOptions], [queryOptions]) -> Promise<Object>
   //max(field, [options]) -> Promise<Any>
@@ -65,7 +65,7 @@ typedef IncludeOptions = {
   ?include : Array<EitherType<IncludeOptions, Model<Dynamic>>>
 }
 
-typedef QueryOptions = {
+typedef ModelQueryOptions = {
   lock : String
 }
 
