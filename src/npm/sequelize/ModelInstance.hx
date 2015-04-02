@@ -22,7 +22,7 @@ extern class ModelInstance<T : ModelInstance<T>> {
   function changed(key : String) : Bool;
   function previous(key : String) : Dynamic;
   //validate([options]) -> Promise<undefined|Errors.ValidationError> // TODO
-  function save(?options : { ?fields : {}, ?silent : Bool, ?validate : Bool, ?transaction : Dynamic }) : Promise<T>; // either ValidationError or ModelInstance
+  function save(?options : { ?fields : {}, ?silent : Bool, ?validate : Bool, ?transaction : Transaction }) : Promise<T>; // either ValidationError or ModelInstance
   function reload() : Promise<T>;
   function update(updated : Dynamic, options : Dynamic) : Promise<T>; // TODO
   //destroy([options={}]) -> Promise<undefined> // TODO
