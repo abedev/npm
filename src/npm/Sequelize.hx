@@ -16,7 +16,8 @@ extern class Sequelize {
   inline function importModel<T : ModelInstance<T>>(path : String) : Model<T>
     return untyped this["import"](path);
 
-  // TODO add options
+  @:overload(function(sql : String, options : QueryOptions) : Promise<Array<Dynamic>> {})
+  @:overload(function(sql : String, model : Model<Dynamic>, options : QueryOptions) : Promise<Array<Dynamic>> {})
   @:overload(function(sql : String, model : Model<Dynamic>) : Promise<Array<Dynamic>> {})
   function query(sql : String) : Promise<Array<Dynamic>>;
   //function set(variables : {}, ?options : { transaction : Transaction }) : Promise<?>; // TODO
