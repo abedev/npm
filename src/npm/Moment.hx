@@ -28,6 +28,8 @@ extern class Moment {
   @:overload(function(date : Date) : Moment {})
   static function utc() : Moment;
 
+  function local() : Moment;
+
   function isValid() : Bool;
 
   // format
