@@ -39,6 +39,11 @@ extern class Sequelize {
   //where(attr, [comparator='='], logic) -> Sequelize.where
   function transaction(?options : TransactionOptions, ?callback : Transaction -> Promise<Dynamic>) : Promise<Transaction>;
 
+  // TODO return type is not correct but works with the current `where` condition
+  static function and(conditions : {}) : {};
+  // TODO return type is not correct but works with the current `where` condition
+  static function or(conditions : {}) : {};
+
   static function STRING(?length : Int, ?binary : Bool) : DataType;
   static function CHAR(?length : Int, ?binary : Bool) : DataType;
   static function INTEGER(?length : Int) : DataType;
