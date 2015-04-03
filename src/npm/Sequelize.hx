@@ -40,9 +40,9 @@ extern class Sequelize {
   function transaction(?options : TransactionOptions, ?callback : Transaction -> Promise<Dynamic>) : Promise<Transaction>;
 
   // TODO return type is not correct but works with the current `where` condition
-  static function and(conditions : {}) : {};
+  static function and(conditions : haxe.extern.Rest<{}>) : {};
   // TODO return type is not correct but works with the current `where` condition
-  static function or(conditions : {}) : {};
+  static function or(conditions : haxe.extern.Rest<{}>) : {};
 
   static function STRING(?length : Int, ?binary : Bool) : DataType;
   static function CHAR(?length : Int, ?binary : Bool) : DataType;
