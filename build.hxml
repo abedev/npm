@@ -10,6 +10,7 @@
 npm.AWS
 npm.BCryptjs
 npm.GM
+npm.Hashids
 npm.JsonWebToken
 npm.LevelDB
 npm.Mime
