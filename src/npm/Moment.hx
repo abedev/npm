@@ -95,6 +95,9 @@ extern class Moment {
   function duration(value : Float, unit : String) : Duration;
 
   function toDate() : Date;
+  function toArray() : Array<Int>;
+  function toJSON() : String;
+  function toISOString() : String;
 
   function clone() : Moment;
 }
