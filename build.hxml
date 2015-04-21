@@ -21,3 +21,4 @@ npm.RandToken
 npm.Request
 npm.SearchIndex
 npm.Sequelize
+npm.AWSCloudFrontSign
