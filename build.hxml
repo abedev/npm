@@ -8,6 +8,7 @@
 -xml xml/js.xml
 -js _
 npm.AWS
+npm.AWSCloudFrontSign
 npm.BCryptjs
 npm.GM
 npm.Hashids
@@ -21,4 +22,3 @@ npm.RandToken
 npm.Request
 npm.SearchIndex
 npm.Sequelize
-npm.AWSCloudFrontSign
