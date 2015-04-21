@@ -94,5 +94,7 @@ extern class Moment {
   @:overload(function(duration : Float) : Moment {})
   function duration(value : Float, unit : String) : Duration;
 
+  function toDate() : Date;
+
   function clone() : Moment;
 }
