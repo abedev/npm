@@ -89,9 +89,10 @@ extern class Moment {
   // function isoWeekYear(?Number) : Moment;
   // funciton weeksInYear() : Moment;
 
-  @:overload(function(?setTo : String) : Moment {})
-  @:overload(function(?setTo : Float) : Moment {})
-  function utcOffset(?setTo : Int) : Moment;
+  @:overload(function(setTo : String) : Moment {})
+  @:overload(function(setTo : Float) : Moment {})
+  @:overload(function(setTo : Int) : Moment {})
+  function utcOffset() : Int;
 
   @:overload(function(duration : String) : Moment {})
   @:overload(function(options : Dynamic<Float>) : Moment {})
