@@ -10,6 +10,7 @@
 npm.AWS
 npm.AWSCloudFrontSign
 npm.BCryptjs
+npm.Busboy
 npm.GM
 npm.Hashids
 npm.JsonWebToken
