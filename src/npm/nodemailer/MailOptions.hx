@@ -7,7 +7,7 @@ typedef MailOptions = {
 	?sender : EitherType<String, Email>,
 	to : EitherType<String, Email>,
 	?cc : EitherType<String, Email>,
-	?bcc : EitherType<String, Email>,
+	?bcc : EitherType<String, Array<Email>>,
 	?replyTo : EitherType<String, Email>,
 	?inReplyTo : String,
 	?references : EitherType<String, Array<String>>,
