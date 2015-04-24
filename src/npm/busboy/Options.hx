@@ -1,7 +1,7 @@
 package npm.busboy;
 
 typedef Options = {
-  headers : {},
+  headers : Dynamic<String>,
   ?highWaterMark : Int,
   ?fileHwm : Int,
   ?defCharset : String,
