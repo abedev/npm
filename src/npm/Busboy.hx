@@ -8,33 +8,21 @@ import js.node.stream.Writable;
 extern class Busboy extends Writable<Busboy> {
   function new(options : Options) : Void;
 
-  inline function onFile(callback : String -> Readable<Dynamic> -> String -> String -> String -> Void) : Busboy {
+  inline function onFile(callback : String -> Readable<Dynamic> -> String -> String -> String -> Void) : Void
     this.on((Event.File : String), callback);
-    return this;
-  }
 
-  inline function onField(callback : String -> String -> Bool -> Bool -> Void) : Busboy {
+  inline function onField(callback : String -> String -> Bool -> Bool -> Void) : Void
     this.on((Event.Field : String), callback);
-    return this;
-  }
 
-  inline function onFinish(callback : Void -> Void) : Busboy {
+  inline function onFinish(callback : Void -> Void) : Void
     this.on((Event.Finish : String), callback);
-    return this;
-  }
 
-  inline function onPartsLimit(callback : Void -> Void) : Busboy {
+  inline function onPartsLimit(callback : Void -> Void) : Void
     this.on((Event.PartsLimit : String), callback);
-    return this;
-  }
 
-  inline function onFilesLimit(callback : Void -> Void) : Busboy {
+  inline function onFilesLimit(callback : Void -> Void) : Void
     this.on((Event.FilesLimit : String), callback);
-    return this;
-  }
 
-  inline function onFieldsLimit(callback : Void -> Void) : Busboy {
+  inline function onFieldsLimit(callback : Void -> Void) : Void
     this.on((Event.FieldsLimit : String), callback);
-    return this;
-  }
 }
