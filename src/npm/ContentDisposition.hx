@@ -4,5 +4,5 @@ import npm.contentdisposition.*;
 
 @:jsRequire("content-disposition")
 extern class ContentDisposition {
-  @:selfCall static call get(filename : String, ?options : Options) : String;
+  @:selfCall static function get(filename : String, ?options : Options) : String;
 }

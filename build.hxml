@@ -11,6 +11,7 @@ npm.AWS
 npm.AWSCloudFrontSign
 npm.BCryptjs
 npm.Busboy
+npm.ContentDisposition
 npm.GM
 npm.Hashids
 npm.JsonWebToken
