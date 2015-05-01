@@ -1,28 +1,51 @@
 package npm.moment;
 
 extern class Duration {
-  function abs() : Float;
-  function weeks() : Int;
-  function valueOf() : Float;
-  function humanize(withSuffix : Bool) : String;
-  @:overload(function(moment : Moment) : Duration {})
+  function humanize(?withSuffix : Bool) : String;
+
+  function milliseconds() : Float;
+  function asMilliseconds() : Float;
+
+  function seconds() : Float;
+  function asSeconds() : Float;
+
+  function minutes() : Float;
+  function asMinutes() : Float;
+
+  function hours() : Float;
+  function asHours() : Float;
+
+  function days() : Float;
+  function asDays() : Float;
+
+  function weeks() : Float;
+  function asWeeks() : Float;
+
+  function months() : Float;
+  function asMonths() : Float;
+
+  function years() : Float;
+  function asYears() : Float;
+
+  @:overload(function(duration : Float) : Duration {})
+  @:overload(function(duration : Duration) : Duration {})
+  @:overload(function(options : Dynamic<Float>) : Duration {})
   function add(value : Float, unit : String) : Duration;
-  @:overload(function(moment : Moment) : Duration {})
+
+  @:overload(function(duration : Float) : Duration {})
+  @:overload(function(duration : Duration) : Duration {})
+  @:overload(function(options : Dynamic<Float>) : Duration {})
   function subtract(value : Float, unit : String) : Duration;
-  function get(units : String) : Float;
+
   function as(units : String) : Float;
 
-  // locale()
-  function toISOString() : String;
-  // function localeData()
+  function get(units : String) : Float;
+
   function toJSON() : String;
 
-  function asMilliseconds() : Float;
-  function asSeconds() : Float;
-  function asMinutes() : Float;
-  function asHours() : Float;
-  function asDays() : Float;
-  function asWeeks() : Float;
-  function asMonths() : Float;
-  function asYears() : Float;
+  /*
+  function abs() : Float;
+  function valueOf() : Float;
+  function toISOString() : String;
+  */
 }

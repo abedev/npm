@@ -28,6 +28,11 @@ extern class Moment {
   @:overload(function(date : Date) : Moment {})
   static function utc() : Moment;
 
+  @:overload(function(duration : String) : Moment {})
+  @:overload(function(options : Dynamic<Float>) : Moment {})
+  @:overload(function(duration : Float) : Moment {})
+  static function duration(value : Float, unit : String) : Duration;
+
   function local() : Moment;
 
   function isValid() : Bool;
@@ -93,11 +98,6 @@ extern class Moment {
   @:overload(function(setTo : Float) : Moment {})
   @:overload(function(setTo : Int) : Moment {})
   function utcOffset() : Int;
-
-  @:overload(function(duration : String) : Moment {})
-  @:overload(function(options : Dynamic<Float>) : Moment {})
-  @:overload(function(duration : Float) : Moment {})
-  function duration(value : Float, unit : String) : Duration;
 
   function toDate() : Date;
   function toArray() : Array<Int>;
