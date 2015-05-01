@@ -1,6 +1,7 @@
 package npm;
 
 import js.html.Node;
+import npm.list.Item;
 
 #if(norequire) @:native("List")
 #else @:jsRequire("list") #end
@@ -9,6 +10,7 @@ extern class List {
   function new(listId : String, ?options : ListOptions, ?values : Array<{}>) : Void;
 
   function add(item : {}) : Void;
+  function filter(?filterFunction : Item -> Bool) : Void;
 }
 
 typedef ListOptions = {
