@@ -13,7 +13,7 @@ typedef DatabaseOptions = {
   ?storage : String, // SQLite only
   ?sync : {},
   ?timezone : String,
-  ?logging : haxe.Constraints.Function,
+  ?logging : haxe.extern.EitherType<Bool, haxe.Constraints.Function>,
   ?omitNull : Bool,
   ?native : Bool,
   ?replication : Bool,
