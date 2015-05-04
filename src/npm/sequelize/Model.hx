@@ -43,5 +43,7 @@ extern class Model<T : ModelInstance<T>> {
 
   //schema(schema, [options]) -> this
   //getTableName(options) -> String|Object
-  //scope(options*) -> Model
+
+  @:overload(function (options : { method: EitherType<String, Array<Dynamic>> }) : Model<T> {})
+  function scope(?options : Array<Dynamic>) : Model<T>;
 }
