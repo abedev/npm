@@ -21,6 +21,8 @@ typedef ModelOptions = {
   ?instanceMethods : Dynamic<haxe.Constraints.Function>,
   ?classMethods : Dynamic<haxe.Constraints.Function>,
   ?schema : String,
+  ?scopes : {},
+  ?defaultScope : ModelQuery,
   ?engine : String,
   ?charset : String,
   ?comment : String,
