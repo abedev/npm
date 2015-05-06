@@ -37,6 +37,8 @@ extern class Moment {
 
   function isValid() : Bool;
 
+  function isAfter(other : Moment) : Bool;
+
   // format
   function format(?pattern : String) : String;
   function fromNow(?withoutSuffix : Bool) : String;
