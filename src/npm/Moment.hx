@@ -113,6 +113,8 @@ extern class Moment {
   function months(setTo : Int) : Moment;
   @:overload(function() : Int {})
   function quarter(setTo : Int) : Moment;
+  @:overload(function() : Float {})
+  function unix(setTo : Float) : Moment;
   @:overload(function() : Int {})
   function year(setTo : Int) : Moment;
   @:overload(function() : Int {})
