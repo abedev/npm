@@ -68,33 +68,60 @@ extern class Moment {
   function subtract(value : Float, unit : String) : Moment;
 
   // time manipulation
-  function millisecond(?setTo : Float) : Moment;
-  function milliseconds(?setTo : Float) : Moment;
-  function second(?setTo : Float) : Moment;
-  function seconds(?setTo : Float) : Moment;
-  function minute(?setTo : Float) : Moment;
-  function minutes(?setTo : Float) : Moment;
-  function hour(?setTo : Float) : Moment;
-  function hours(?setTo : Float) : Moment;
-  function date(?setTo : Float) : Moment;
-  function dates(?setTo : Float) : Moment;
-  // function day(?Number|String) : Moment; // day of week
-  // function days(?Number|String) : Moment; // day of week
-  // function weekday(?Number) : Moment; // locale-aware day of week
-  // function isoWeekday(?Number) : Moment; // ISO day of week
-  // function dayOfYear(?Number) : Moment; // 1-366, switching years if out of range
-  // function week(?Number) : Moment;
-  // function weeks(?Number) : Moment;
-  // function isoWeek(?Number) : Moment;
-  // function isoWeeks(?Number) : Moment;
-  function month(?setTo : Int) : Moment; // TODO: should alternatively accept a string
-  function months(?setTo : Int) : Moment;
-  // function quarter(?Number) : Moment;
-  function year(?setTo : Int) : Moment;
-  function years(?setTo : Int) : Moment;
-  // function weekYear(?Number) : Moment;
-  // function isoWeekYear(?Number) : Moment;
-  // funciton weeksInYear() : Moment;
+  @:overload(function() : Float {})
+  function millisecond(setTo : Float) : Moment;
+  @:overload(function() : Float {})
+  function milliseconds(setTo : Float) : Moment;
+  @:overload(function() : Float {})
+  function second(setTo : Float) : Moment;
+  @:overload(function() : Float {})
+  function seconds(setTo : Float) : Moment;
+  @:overload(function() : Float {})
+  function minute(setTo : Float) : Moment;
+  @:overload(function() : Float {})
+  function minutes(setTo : Float) : Moment;
+  @:overload(function() : Float {})
+  function hour(setTo : Float) : Moment;
+  @:overload(function() : Float {})
+  function hours(setTo : Float) : Moment;
+  @:overload(function() : Float {})
+  function date(setTo : Float) : Moment;
+  @:overload(function() : Float {})
+  function dates(setTo : Float) : Moment;
+  @:overload(function() : Int {})
+  function day(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function days(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function dayOfYear(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function weekday(setTo : Int) : Moment; // locale-aware day of week
+  @:overload(function() : Int {})
+  function isoWeekday(setTo : Int) : Moment; // ISO day of week
+  @:overload(function() : Int {})
+  function week(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function weeks(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function isoWeek(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function isoWeeks(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  @:overload(function(setTo : String) : Moment {})
+  function month(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function months(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function quarter(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function year(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function years(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function weekYear(setTo : Int) : Moment;
+  @:overload(function() : Int {})
+  function isoWeekYear(setTo : Int) : Moment;
+  function weeksInYear() : Int;
 
   @:overload(function(setTo : String) : Moment {})
   @:overload(function(setTo : Float) : Moment {})
