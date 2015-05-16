@@ -1,6 +1,10 @@
 package npm.moment;
 
+#if(norequire) @:native("moment.duration")
+#else @:jsRequire("moment", "duration") #end
 extern class Duration {
+  @:selfCall function new(value : Float, type : String) : Void;
+
   function humanize(?withSuffix : Bool) : String;
 
   function milliseconds() : Float;
