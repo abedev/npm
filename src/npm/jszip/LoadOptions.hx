@@ -1,4 +1,4 @@
-package npm.common;
+package npm.jszip;
 
 typedef LoadOptions = {
   ?base64 : Bool,

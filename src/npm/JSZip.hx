@@ -2,9 +2,10 @@ package npm;
 
 import haxe.extern.EitherType;
 import npm.common.DataType;
+import npm.jszip.*;
 
 @:jsRequire("jszip")
-extern class JSZip {
+extern class JSZip {
   @:overload(function(data : DataType, options : LoadOptions) : Void {})
   @:overload(function(data : DataType) : Void {})
   function new() : Void;

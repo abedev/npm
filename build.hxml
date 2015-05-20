@@ -15,6 +15,7 @@ npm.ContentDisposition
 npm.GM
 npm.Hashids
 npm.JsonWebToken
+npm.JSZip
 npm.LevelDB
 npm.Mime
 npm.Moment
