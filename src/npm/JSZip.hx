@@ -12,4 +12,6 @@ extern class JSZip {
 
   @:overload(function(data : DataType, options : LoadOptions) : Void {})
   function load(data : DataType) : Void;
+
+  function file(name : String) : ZipObject;
 }
