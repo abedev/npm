@@ -17,4 +17,7 @@ extern class JSZip {
   @:overload(function(name : String, data : DataType) : JSZip {})
   @:overload(function(ereg : js.RegExp) : Array<ZipObject> {})
   function file(name : String) : Null<ZipObject>;
+
+  @:overload(function(ereg : js.RegExp) : Array<ZipObject> {})
+  function folder(name : String) : JSZip;
 }
