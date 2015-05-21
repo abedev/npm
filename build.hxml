@@ -13,6 +13,7 @@ npm.aws.S3
 npm.BCryptjs
 npm.Busboy
 npm.ContentDisposition
+npm.FsExtra
 npm.GM
 npm.Hashids
 npm.JsonWebToken
