@@ -12,5 +12,6 @@ extern class S3 {
   // TODO check return type, options, and callback type
   function deleteObject(params : DeleteParams, callback : Callback<Dynamic>) : Void;
   // TODO check return type, params, options, and callback type
-  function getObject(options : GetObjectOptions, Callback<Dynamic>) : Request;
+  @:overload(function(options : GetObjectOptions) : Request {})
+  function getObject(options : GetObjectOptions, callback : Callback<Dynamic>) : Request;
 }

@@ -9,6 +9,7 @@
 -js _
 npm.AWS
 npm.AWSCloudFrontSign
+npm.aws.S3
 npm.BCryptjs
 npm.Busboy
 npm.ContentDisposition
