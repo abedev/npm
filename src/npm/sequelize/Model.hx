@@ -6,10 +6,12 @@ import js.Promise;
 extern class Model<T : ModelInstance<T>> {
   function sync() : Promise<Model<T>>;
   function drop(?options : DropOptions) : Promise<Void>; // TODO Void?
-  function find(query : EitherType<Int, ModelQuery>) : Promise<T>;
+  @:overload(function(limit : Int) : Promise<T> {})
+  function find(query : ModelQuery) : Promise<T>;
   //findAll([options], [queryOptions]) -> Promise<Array<Instance>>
   function findAll(?query : ModelQuery, ?options : ModelQueryOptions) : Promise<Array<T>>; // TODO options
-  function findOne(?query : EitherType<Int, ModelQuery>, ?options : ModelQueryOptions) : Promise<T>;
+  @:overload(function(limit : Int, ?options : ModelQueryOptions) : Promise<T> {})
+  function findOne(?query : ModelQuery, ?options : ModelQueryOptions) : Promise<T>;
   function count(?query : ModelQuery) : Promise<Int>;
   //findAndCount([findOptions], [queryOptions]) -> Promise<Object>
   //max(field, [options]) -> Promise<Any>
@@ -24,9 +26,9 @@ extern class Model<T : ModelInstance<T>> {
   function update(values : {}, options : {}) : Promise<Array<Int>>;
   //describe() -> Promise
 
-  inline function findAttributes<TAt>(query : EitherType<Int, ModelQuery>) : Promise<TAt>
+  inline function findAttributes<TAt>(query : EitherType<ModelQuery, Int>) : Promise<TAt>
     return cast find(query);
-  inline function findOneAttributes<TAt>(query : EitherType<Int, ModelQuery>) : Promise<TAt>
+  inline function findOneAttributes<TAt>(query : EitherType<ModelQuery, Int>) : Promise<TAt>
     return cast findOne(query);
 
   function build(?defaults : {}) : T;
