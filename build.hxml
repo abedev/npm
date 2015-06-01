@@ -21,6 +21,7 @@ npm.JSZip
 npm.LevelDB
 npm.Mime
 npm.Moment
+npm.MomentTimezone
 npm.NodeMailer
 npm.QS
 npm.RandToken
