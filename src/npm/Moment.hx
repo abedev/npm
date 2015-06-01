@@ -7,19 +7,7 @@ import haxe.extern.Rest;
 
 #if(norequire) @:native("moment")
 #else @:jsRequire("moment") #end
-extern class Moment {
-  static var ISO_8601(default, null) : String;
-
-  @:overload(function(value : String) : Void {})
-  @:overload(function(value : String, formats : Array<String>, ?locale : String, ?strict : Bool) : Void {})
-  @:overload(function(value : String, format : String, ?locale : String, ?strict : Bool) : Void {})
-  @:overload(function(value : Float, format : String) : Void {})
-  @:overload(function(options : Dynamic<Float>) : Void {})
-  @:overload(function(milliseconds : Float) : Void {})
-  @:overload(function(date : Date) : Void {})
-  @:overload(function(values : Array<Float>) : Void {})
-  @:selfCall function new() : Void;
-
+extern class Moment extends BaseMoment<Moment>{
   @:overload(function(value : Float) : Moment {})
   @:overload(function(value : Array<Float>) : Moment {})
   @:overload(function(value : String, ?format : String, ?locale : String, ?strict : Bool) : Moment {})
@@ -32,12 +20,26 @@ extern class Moment {
   @:overload(function(options : Dynamic<Float>) : Moment {})
   @:overload(function(duration : Float) : Moment {})
   static function duration(value : Float, unit : String) : Duration;
+}
 
-  function local() : Moment;
+extern class BaseMoment<T : BaseMoment<Dynamic>> {
+  static var ISO_8601(default, null) : String;
+
+  @:overload(function(value : String) : Void {})
+  @:overload(function(value : String, formats : Array<String>, ?locale : String, ?strict : Bool) : Void {})
+  @:overload(function(value : String, format : String, ?locale : String, ?strict : Bool) : Void {})
+  @:overload(function(value : Float, format : String) : Void {})
+  @:overload(function(options : Dynamic<Float>) : Void {})
+  @:overload(function(milliseconds : Float) : Void {})
+  @:overload(function(date : Date) : Void {})
+  @:overload(function(values : Array<Float>) : Void {})
+  @:selfCall function new() : Void;
+
+  function local() : T;
 
   function isValid() : Bool;
 
-  function isAfter(other : Moment) : Bool;
+  function isAfter(other : T) : Bool;
 
   // format
   function format(?pattern : String) : String;
@@ -45,89 +47,89 @@ extern class Moment {
 
   // get and set
   function get(interval : String) : Float;
-  @:overload(function(options : Dynamic<Float>) : Moment {})
-  function set(unit : String, value : Float) : Moment;
+  @:overload(function(options : Dynamic<Float>) : T {})
+  function set(unit : String, value : Float) : T;
 
   // comparison
-  function max(args : Rest<Moment>) : Moment;
-  function min(args : Rest<Moment>) : Moment;
+  function max(args : Rest<Moment>) : T;
+  function min(args : Rest<Moment>) : T;
 
   @:overload(function(value : String, ?unit : String, ?floatingPoint : Bool) : Float {})
   @:overload(function(value : Float, ?unit : String, ?floatingPoint : Bool) : Float {})
   @:overload(function(value : Date, ?unit : String, ?floatingPoint : Bool) : Float {})
   @:overload(function(value : Array<Float>, ?unit : String, ?floatingPoint : Bool) : Float {})
-  function diff(value : Moment, ?unit : String, ?floatingPoint : Bool) : Float;
+  function diff(value : T, ?unit : String, ?floatingPoint : Bool) : Float;
 
   // math
-  @:overload(function(options : Dynamic<Float>) : Moment {})
-  @:overload(function(duration : Duration) : Moment {})
-  function add(value : Float, unit : String) : Moment;
+  @:overload(function(options : Dynamic<Float>) : T {})
+  @:overload(function(duration : Duration) : T {})
+  function add(value : Float, unit : String) : T;
 
-  @:overload(function(options : Dynamic<Float>) : Moment {})
-  @:overload(function(duration : Duration) : Moment {})
-  function subtract(value : Float, unit : String) : Moment;
+  @:overload(function(options : Dynamic<Float>) : T {})
+  @:overload(function(duration : Duration) : T {})
+  function subtract(value : Float, unit : String) : T;
 
   // time manipulation
   @:overload(function() : Float {})
-  function millisecond(setTo : Float) : Moment;
+  function millisecond(setTo : Float) : T;
   @:overload(function() : Float {})
-  function milliseconds(setTo : Float) : Moment;
+  function milliseconds(setTo : Float) : T;
   @:overload(function() : Float {})
-  function second(setTo : Float) : Moment;
+  function second(setTo : Float) : T;
   @:overload(function() : Float {})
-  function seconds(setTo : Float) : Moment;
+  function seconds(setTo : Float) : T;
   @:overload(function() : Float {})
-  function minute(setTo : Float) : Moment;
+  function minute(setTo : Float) : T;
   @:overload(function() : Float {})
-  function minutes(setTo : Float) : Moment;
+  function minutes(setTo : Float) : T;
   @:overload(function() : Float {})
-  function hour(setTo : Float) : Moment;
+  function hour(setTo : Float) : T;
   @:overload(function() : Float {})
-  function hours(setTo : Float) : Moment;
+  function hours(setTo : Float) : T;
   @:overload(function() : Float {})
-  function date(setTo : Float) : Moment;
+  function date(setTo : Float) : T;
   @:overload(function() : Float {})
-  function dates(setTo : Float) : Moment;
+  function dates(setTo : Float) : T;
   @:overload(function() : Int {})
-  function day(setTo : Int) : Moment;
+  function day(setTo : Int) : T;
   @:overload(function() : Int {})
-  function days(setTo : Int) : Moment;
+  function days(setTo : Int) : T;
   @:overload(function() : Int {})
-  function dayOfYear(setTo : Int) : Moment;
+  function dayOfYear(setTo : Int) : T;
   @:overload(function() : Int {})
-  function weekday(setTo : Int) : Moment; // locale-aware day of week
+  function weekday(setTo : Int) : T; // locale-aware day of week
   @:overload(function() : Int {})
-  function isoWeekday(setTo : Int) : Moment; // ISO day of week
+  function isoWeekday(setTo : Int) : T; // ISO day of week
   @:overload(function() : Int {})
-  function week(setTo : Int) : Moment;
+  function week(setTo : Int) : T;
   @:overload(function() : Int {})
-  function weeks(setTo : Int) : Moment;
+  function weeks(setTo : Int) : T;
   @:overload(function() : Int {})
-  function isoWeek(setTo : Int) : Moment;
+  function isoWeek(setTo : Int) : T;
   @:overload(function() : Int {})
-  function isoWeeks(setTo : Int) : Moment;
+  function isoWeeks(setTo : Int) : T;
   @:overload(function() : Int {})
-  @:overload(function(setTo : String) : Moment {})
-  function month(setTo : Int) : Moment;
+  @:overload(function(setTo : String) : T {})
+  function month(setTo : Int) : T;
   @:overload(function() : Int {})
-  function months(setTo : Int) : Moment;
+  function months(setTo : Int) : T;
   @:overload(function() : Int {})
-  function quarter(setTo : Int) : Moment;
+  function quarter(setTo : Int) : T;
   @:overload(function() : Float {})
-  function unix(setTo : Float) : Moment;
+  function unix(setTo : Float) : T;
   @:overload(function() : Int {})
-  function year(setTo : Int) : Moment;
+  function year(setTo : Int) : T;
   @:overload(function() : Int {})
-  function years(setTo : Int) : Moment;
+  function years(setTo : Int) : T;
   @:overload(function() : Int {})
-  function weekYear(setTo : Int) : Moment;
+  function weekYear(setTo : Int) : T;
   @:overload(function() : Int {})
-  function isoWeekYear(setTo : Int) : Moment;
+  function isoWeekYear(setTo : Int) : T;
   function weeksInYear() : Int;
 
-  @:overload(function(setTo : String) : Moment {})
-  @:overload(function(setTo : Float) : Moment {})
-  @:overload(function(setTo : Int) : Moment {})
+  @:overload(function(setTo : String) : T {})
+  @:overload(function(setTo : Float) : T {})
+  @:overload(function(setTo : Int) : T {})
   function utcOffset() : Int;
 
   function toDate() : Date;
@@ -135,5 +137,5 @@ extern class Moment {
   function toJSON() : String;
   function toISOString() : String;
 
-  function clone() : Moment;
+  function clone() : T;
 }
