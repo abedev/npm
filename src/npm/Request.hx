@@ -5,6 +5,7 @@ import npm.common.Callback;
 
 @:jsRequire("request")
 extern class Request {
+  @:selfCall static function request(options : RequestOptions, callback : Callback<js.node.http.ServerResponse>) : Void;
   @:selfCall static function async(url : String, callback : Callback<js.node.http.ServerResponse>) : Void;
   @:selfCall static function stream(url : String) : Readable;
   static function put(url : String) : Writable;
