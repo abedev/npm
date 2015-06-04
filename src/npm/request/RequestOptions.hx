@@ -5,5 +5,12 @@ typedef RequestOptions = {
   ?preambleCRLF : Bool,
   ?postambleCRLF : Bool,
   uri : String,
-  ?multipart : Dynamic
+  ?multipart : Dynamic,
+  ?auth : {
+    user : String,
+    pazz : String,
+    ?sendImmediately : Bool,
+    ?bearer : String
+  },
+  ?headers : Dynamic<String>
 }
