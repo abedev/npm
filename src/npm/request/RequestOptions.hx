@@ -8,9 +8,10 @@ typedef RequestOptions = {
   ?multipart : Dynamic,
   ?auth : {
     user : String,
-    pazz : String,
+    pass : String,
     ?sendImmediately : Bool,
     ?bearer : String
   },
-  ?headers : Dynamic<String>
+  ?headers : Dynamic<String>,
+  ?json : {}
 }
