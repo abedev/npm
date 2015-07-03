@@ -5,8 +5,8 @@
   "classPath": "src",
   "tags": ["nodejs", "npm"],
   "description": "NPM types for Haxe",
-  "releasenote": "Many more NPM definitions.",
-  "version": "0.3.0",
+  "releasenote": "More and more NPM definitions.",
+  "version": "0.4.0",
   "contributors": ["fponticelli", "mlms13"],
   "dependencies" : {}
 }
