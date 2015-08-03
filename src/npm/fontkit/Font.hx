@@ -34,7 +34,7 @@ extern class Font {
 
   // glyph metrics and layout
   function advancesForGlyphs(glyphs : Array<Glyph>, ?features : Array<String>) : Array<Float>;
-  function widthOfString(text : String, ?features : Array<String>) : Float;
+  function widthOfString(text : String, features : Array<String>) : Float;
   function widthOfGlyph(glyph_id : Int) : Float; // ?
 
 
