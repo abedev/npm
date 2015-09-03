@@ -18,6 +18,7 @@ npm.Docxtemplater
 npm.docxtemplater.DocxGen
 npm.docxtemplater.PptxGen
 npm.Fontkit
+npm.FontManager
 npm.FsExtra
 npm.GM
 npm.Hashids
