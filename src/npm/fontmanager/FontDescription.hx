@@ -5,8 +5,8 @@ typedef FontDescription = {
   postscriptName : String,
   family : String,
   style : String,
-  weight : Float,
-  width : Float,
+  weight : Int,
+  width : Int,
   italic : Bool,
   monospace : Bool
 }
