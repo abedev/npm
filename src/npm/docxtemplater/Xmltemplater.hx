@@ -13,4 +13,6 @@ extern class Xmltemplater {
   @:overload(function() : String {})
   function getFullText(path : String) : String;
   function getTags() : Array<{ file : String, vars : {}}>;
+
+  function attachModule(module : Module) : Void;
 }
