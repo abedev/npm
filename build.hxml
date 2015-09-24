@@ -28,6 +28,7 @@ npm.LevelDB
 npm.Mime
 npm.Moment
 npm.MomentTimezone
+npm.MSSql
 npm.NodeMailer
 npm.QS
 npm.RandToken
