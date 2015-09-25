@@ -1,7 +1,8 @@
 package npm.mssql;
 
-import js.node.events.EventEmitter;
 import js.node.Stream;
+import js.node.events.EventEmitter;
+import npm.common.Callback;
 
 @:jsRequire("mssql", "Request")
 extern class Request extends EventEmitter<Request> {
@@ -20,7 +21,7 @@ extern class Request extends EventEmitter<Request> {
 
   //function bulk(table : Table, callback : Callback0) : Void;
 
-  function stream(stream : Stream) : Stream;
+  function stream(stream : Stream<Dynamic>) : Stream<Dynamic>;
 
   function query(command : String, callback : Callback1<RecordSet>) : Void;
 
