@@ -6,9 +6,9 @@ import npm.common.Callback;
 extern class Server extends js.node.events.EventEmitter<Server> {
   function new(?options : ServerOptions) : Void;
   // TODO is Array<Int> correct?
-  inline public function onFlush(callback : Callback2<Socket, Array<Int>>) : Void
-    this.on("flush", callback);
+  inline public function onFlush(callback : Callback2<Socket, Array<Int>>) : Server
+    return this.on("flush", callback);
 
-  inline public function onDrain(callback : Callback<Socket>) : Void
-    this.on("drain", callback);
+  inline public function onDrain(callback : Callback<Socket>) : Server
+    return this.on("drain", callback);
 }
