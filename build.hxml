@@ -17,6 +17,7 @@ npm.ContentDisposition
 npm.Docxtemplater
 npm.docxtemplater.DocxGen
 npm.docxtemplater.PptxGen
+npm.EngineIO
 npm.Fontkit
 npm.FontManager
 npm.FsExtra
