@@ -5,7 +5,7 @@ extern class ConnectionStringBuilder {
   function new(?connectionString : String) : Void;
 
   // methods
-  function add(key : String, value : String) : Void
+  function add(key : String, value : String) : Void;
   function remove(key : String) : Void;
   function getValue(key : String) : String;
   function setValue(key : String, value : String) : Void;
