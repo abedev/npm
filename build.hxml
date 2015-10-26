@@ -51,3 +51,8 @@ npm.Request
 npm.SearchIndex
 npm.Sequelize
 npm.Temp
+npm.winston.Logger
+npm.winston.transports.Console
+npm.winston.transports.File
+npm.winston.transports.DailyRotateFile
+npm.winston.transports.Http
