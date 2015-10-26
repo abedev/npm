@@ -21,6 +21,7 @@ npm.EngineIO
 npm.EngineIOClient
 npm.Fontkit
 npm.FontManager
+npm.ForeverMonitor
 npm.FsExtra
 npm.GM
 npm.Hashids
