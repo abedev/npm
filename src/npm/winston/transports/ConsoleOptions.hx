@@ -1,5 +1,7 @@
 package npm.winston.transports;
 
+import haxe.Constraints.Function;
+
 typedef ConsoleOptions = { > TransportOptions,
   ?json: Bool,
   ?stringify: Bool,

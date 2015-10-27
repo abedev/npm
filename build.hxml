@@ -52,7 +52,14 @@ npm.SearchIndex
 npm.Sequelize
 npm.Temp
 npm.winston.Logger
+npm.winston.LoggerOptions
 npm.winston.transports.Console
-npm.winston.transports.File
+npm.winston.transports.ConsoleOptions
 npm.winston.transports.DailyRotateFile
+npm.winston.transports.DailyRotateFileOptions
+npm.winston.transports.File
+npm.winston.transports.FileOptions
 npm.winston.transports.Http
+npm.winston.transports.HttpOptions
+npm.winston.transports.ITransport
+npm.winston.transports.TransportOptions
