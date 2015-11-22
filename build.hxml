@@ -28,6 +28,10 @@ npm.Hashids
 npm.JsonWebToken
 npm.JSZip
 npm.LevelDB
+npm.lf.Predicate
+npm.lf.Row
+npm.lf.Schema
+npm.lf.schema.Table
 npm.Mime
 npm.Moment
 npm.MomentTimezone
