@@ -1,5 +1,12 @@
 package npm.lf.schema;
 
+typedef RawForeignKeySpec = {
+  local : String,
+  ref : String,
+  action : npm.lf.ConstraintAction,
+  timing : npm.lf.ConstraintAction
+};
+
 interface TableBuilder {
   function addColumn(name : String, type : npm.lf.Type) : TableBuilder;
   function addForeignKey(name : String, spec : RawForeignKeySpec) : TableBuilder;

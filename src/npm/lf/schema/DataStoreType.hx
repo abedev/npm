@@ -1,5 +1,6 @@
 package npm.lf.schema;
 
+@:native("lf.schema.DataStoreType")
 extern class DataStoreType {
   static var FIREBASE;
   static var INDEXED_DB;

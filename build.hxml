@@ -50,7 +50,6 @@ npm.lf.schema.Column
 npm.lf.schema.Database
 npm.lf.schema.DatabasePragma
 npm.lf.schema.DataStoreType
-npm.lf.schema.RawForeignKeySpec
 npm.lf.schema.Table
 npm.lf.schema.TableBuilder
 npm.Mime
