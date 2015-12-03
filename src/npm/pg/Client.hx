@@ -14,6 +14,7 @@ extern class Client extends EventEmitter<Client> {
 
   @:overload(function(config : QueryConfig, values : Array<Dynamic>, ?callback : QueryCallback) : Query {})
   @:overload(function(config : QueryConfig, ?callback : QueryCallback) : Query {})
+  @:overload(function(text : String, values : Array<Dynamic>, ?callback : QueryCallback) : Query {})
   public function query(text : String, ?callback : QueryCallback) : Query;
 
   public function cancel(client : Client, query : Query) : Void;
