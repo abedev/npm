@@ -25,6 +25,9 @@ npm.ForeverMonitor
 npm.FsExtra
 npm.GM
 npm.Hashids
+npm.JSYaml
+npm.jsyaml.DumpOptions
+npm.jsyaml.LoadOptions
 npm.JsonWebToken
 npm.JSZip
 npm.LevelDB
