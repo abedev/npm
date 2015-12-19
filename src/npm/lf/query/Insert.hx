@@ -1,6 +1,6 @@
 package npm.lf.query;
 
-interface Insert extends Builder {
+extern interface Insert extends Builder {
   function into(table : npm.lf.schema.Table) : Insert;
 
   @:overload(function (rows : npm.lf.Binder) : Insert {})
