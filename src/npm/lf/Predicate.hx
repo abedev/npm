@@ -1,3 +1,3 @@
 package npm.lf;
 
-interface Predicate {}
+extern interface Predicate {}

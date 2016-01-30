@@ -2,7 +2,7 @@ package npm.lf.raw;
 
 import js.Promise;
 
-interface BackStore {
+extern interface BackStore {
   function getRawDBInstance() : Dynamic;
   function getRawTransaction() : Dynamic;
   function dropTable(tableName : String) : Promise<Void>;

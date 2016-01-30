@@ -2,7 +2,7 @@ package npm.lf;
 
 import js.Promise;
 
-interface Transaction {
+extern interface Transaction {
   function attach(query : npm.lf.query.Builder) : Promise<Array<Dynamic<Dynamic>>>;
   function begin(scope : Array<npm.lf.schema.Table>) : Promise<Void>;
   function commit() : Promise<Void>;

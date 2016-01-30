@@ -13,7 +13,7 @@ typedef IndexedColumn = {
   order : npm.lf.Order
 };
 
-interface TableBuilder {
+extern interface TableBuilder {
   function addColumn(name : String, type : npm.lf.Type) : TableBuilder;
   function addForeignKey(name : String, spec : RawForeignKeySpec) : TableBuilder;
 

@@ -1,6 +1,6 @@
 package npm.lf.schema;
 
-interface Database {
+extern interface Database {
   function name() : String;
   function pragma() : DatabasePragma;
   function tables() : Array<Table>;

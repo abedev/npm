@@ -1,6 +1,6 @@
 package npm.lf.schema;
 
-interface Table {
+extern interface Table {
   function as(name : String) : Table;
 
    // value is an object with keys matching column names

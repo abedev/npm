@@ -1,5 +1,5 @@
 package npm.lf.schema;
 
-interface DatabasePragma {
+extern interface DatabasePragma {
   var enableBundleMode : Bool;
 }

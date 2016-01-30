@@ -1,5 +1,5 @@
 package npm.lf;
 
-interface Binder {
+extern interface Binder {
   function getIndex() : Int;
 }

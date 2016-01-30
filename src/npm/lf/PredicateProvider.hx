@@ -2,7 +2,7 @@ package npm.lf;
 
 import haxe.extern.EitherType;
 
-interface PredicateProvider {
+extern interface PredicateProvider {
   @:overload(function (operand : Binder) : Predicate {})
   @:overload(function (operand : npm.lf.schema.Column) : Predicate {})
   function eq(operand : ValueLiteral) : Predicate;

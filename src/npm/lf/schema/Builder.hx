@@ -2,7 +2,7 @@ package npm.lf.schema;
 
 import js.Promise;
 
-interface Builder {
+extern interface Builder {
   function connect(?options : ConnectOptions) : Promise<npm.lf.Database>;
   function createTable(tableName : String) : TableBuilder;
   function getSchema() : Database;

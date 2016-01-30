@@ -1,3 +1,3 @@
 package npm.lf;
 
-interface Row {}
+extern interface Row {}
