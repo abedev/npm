@@ -1,10 +1,15 @@
 package npm.request;
 
-typedef RequestOptions = {
+import haxe.extern.EitherType;
+
+typedef RequestOptions = {>RequestMethodOptions,
   method : String,
+  uri : String,
+}
+
+typedef RequestMethodOptions = {
   ?preambleCRLF : Bool,
   ?postambleCRLF : Bool,
-  uri : String,
   ?multipart : Dynamic,
   ?auth : {
     user : String,
@@ -13,5 +18,7 @@ typedef RequestOptions = {
     ?bearer : String
   },
   ?headers : Dynamic<String>,
-  ?json : {}
+  ?body : Dynamic,
+  ?json : EitherType<Bool, {}>,
+  ?encoding : Null<String>
 }

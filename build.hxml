@@ -90,6 +90,10 @@ npm.pg.Types
 npm.QS
 npm.RandToken
 npm.Request
+npm.request.Readable
+npm.request.RequestOptions
+npm.request.ResponseBody
+npm.request.Writable
 npm.SearchIndex
 npm.Sequelize
 npm.Temp
