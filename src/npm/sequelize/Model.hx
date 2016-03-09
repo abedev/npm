@@ -33,6 +33,8 @@ extern class Model<T : ModelInstance<T>> {
 
   function build(?defaults : {}) : T;
 
+  function removeAttribute(attr : String) : Void;
+
   //destroy(options) -> Promise<undefined>
   function destroy(options : ModelDestroyOptions) : Promise<Array<Int>>;
 
