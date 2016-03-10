@@ -22,7 +22,7 @@ extern class Model<T : ModelInstance<T>> {
   //findOrInitialize -> Promise<Instance>
   //findOrCreate(options, [queryOptions]) -> Promise<Instance|created>
   //upsert(values, [options]) -> Promise<created>
-  //bulkCreate(records, [options]) -> Promise<Array<Instance>>
+  function bulkCreate(items : Array<{}>, ?options : ModelQueryOptions) : Promise<Array<T>>;
   function update(values : {}, options : {}) : Promise<Array<Int>>;
   //describe() -> Promise
 
@@ -32,6 +32,8 @@ extern class Model<T : ModelInstance<T>> {
     return cast findOne(query);
 
   function build(?defaults : {}) : T;
+
+  function removeAttribute(attr : String) : Void;
 
   //destroy(options) -> Promise<undefined>
   function destroy(options : ModelDestroyOptions) : Promise<Array<Int>>;
