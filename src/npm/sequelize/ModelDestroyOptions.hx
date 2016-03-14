@@ -1,5 +1,6 @@
 package npm.sequelize;
 
 typedef ModelDestroyOptions = {
-  ?where : {}
+  ?where : {},
+  ?transaction : Transaction
 }
