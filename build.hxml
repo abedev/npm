@@ -78,6 +78,7 @@ npm.pg.Client
 npm.pg.ClientConfig
 npm.pg.ConnectCallback
 npm.pg.ConnectConfig
+npm.pg.Connection
 npm.pg.Defaults
 npm.pg.Done
 npm.pg.Pool
@@ -85,6 +86,7 @@ npm.pg.Pools
 npm.pg.Query
 npm.pg.QueryCallback
 npm.pg.QueryConfig
+npm.pg.QueryResult
 npm.pg.Row
 npm.pg.Types
 npm.QS
