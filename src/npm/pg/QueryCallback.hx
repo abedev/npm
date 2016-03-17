@@ -2,4 +2,4 @@ package npm.pg;
 
 import js.Error;
 
-typedef QueryCallback = Null<Error> -> { rows: Array<Row> } -> Void;
+typedef QueryCallback = Null<Error> -> QueryResult -> Void;
