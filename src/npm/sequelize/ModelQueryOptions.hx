@@ -1,5 +1,6 @@
 package npm.sequelize;
 
 typedef ModelQueryOptions = {
-  lock : String
+  ?lock : String,
+  ?transaction : Transaction
 }
