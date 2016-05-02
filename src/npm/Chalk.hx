@@ -26,7 +26,7 @@ extern class Chalk {
   static var cyan : ChalkStyle;
   static var white : ChalkStyle;
   static var gray : ChalkStyle;
-  
+
   static var bgBlack : ChalkStyle;
   static var bgRed : ChalkStyle;
   static var bgGreen : ChalkStyle;
@@ -37,6 +37,7 @@ extern class Chalk {
   static var bgWhite : ChalkStyle;
 }
 
+@:callable
 extern class ChalkStyle {
   @:selfCall()
   function apply(value : String) : String;
