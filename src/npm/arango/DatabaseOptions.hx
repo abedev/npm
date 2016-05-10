@@ -5,7 +5,7 @@ typedef DatabaseOptions = {
   ?databaseName : String,
   ?arangoVersion : Int,
   ?headers : {},
-  ?agent : Agent;
+  ?agent : Agent,
   ?agentOptions: {
     ?maxSockets: Int,
     ?keepAlive: Bool,

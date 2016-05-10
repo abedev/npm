@@ -1,5 +1,5 @@
 package npm.arango;
 
-typedef Agent = {
-  
+typedef Agent = { // TODO
+
 }

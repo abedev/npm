@@ -12,14 +12,14 @@ extern class EngineIO {
   static var transports(default, null) : Dynamic<Function>;
 
   @:selfCall
-  @:override(function(server : js.node.http.Server) : Server {})
-  @:override(function(options : ServerOptions) : Server {})
+  @:overload(function(server : js.node.http.Server) : Server {})
+  @:overload(function(options : ServerOptions) : Server {})
   static function createServer() : Server;
 
   // TODO type callback better
-  @:override(function(port : Int, callback : Function) : Void {})
+  @:overload(function(port : Int, callback : Function) : Void {})
   static function listen(port : Int, options : ServerAttachOptions, callback : Function) : Server;
 
-  @:override(function(server : js.node.http.Server) : Void {})
+  @:overload(function(server : js.node.http.Server) : Void {})
   static function attach(server : js.node.http.Server, options : ServerAttachOptions) : Server;
 }

@@ -1,5 +1,5 @@
 package npm.arango;
 
-typedef FullTextOptions = {
+typedef FulltextOptions = {
   ?minLength : Int
 }
