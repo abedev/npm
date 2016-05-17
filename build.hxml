@@ -111,3 +111,5 @@ npm.winston.transports.Http
 npm.winston.transports.HttpOptions
 npm.winston.transports.ITransport
 npm.winston.transports.TransportOptions
+npm.winston.transports.WinstonAwsCloudwatch
+npm.winston.transports.WinstonCloudwatch
