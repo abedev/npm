@@ -1,9 +1,9 @@
 package npm.sequelize;
 
 typedef DatabaseOptions = {
-  host : String,
+  ?host : String,
   ?define : {},
-  dialect : DatabaseDialect,
+  ?dialect : DatabaseDialect,
   ?dialectModulePath : String,
   ?dialectOptions : {},
   ?query : {},

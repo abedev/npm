@@ -5,7 +5,8 @@ import js.Promise;
 
 @:jsRequire("sequelize")
 extern class Sequelize {
-  @:overload(function(connectionstring : String, ?options : DatabaseOptions) : Void {})
+  @:overload(function(connectionstring : String) : Void {})
+  @:overload(function(connectionstring : String, options : DatabaseOptions) : Void {})
   function new(database : String, username : String, password : String, ?options : DatabaseOptions) : Void;
   function define<T : ModelInstance<T>>(modelName : String, attributes : Dynamic<ColumnOptions>, ?options : ModelOptions) : Model<T>;
   function getDialect() : String;
@@ -31,6 +32,7 @@ extern class Sequelize {
   //function authenticate() : Promise<?> // TODO
   function fn(functionName : String, args : haxe.extern.Rest<FunctionColumn>) : SequelizeFunction;
   function col(colName : String) : FunctionColumn;
+  function close() : Void;
   //cast(val, type) -> Sequelize.cast
   //literal(val) -> Sequelize.literal
   //and(args) -> Sequelize.and
