@@ -1,10 +1,14 @@
 -cp src
+-cp int-test
+-lib hxnodejs
+
+--each
+
 --no-output
 -D doc-gen
 -D display
 -D dox
 -dce no
--lib hxnodejs
 -xml xml/js.xml
 -js _
 npm.AWS
@@ -113,3 +117,8 @@ npm.winston.transports.ITransport
 npm.winston.transports.TransportOptions
 npm.winston.transports.WinstonAwsCloudwatch
 npm.winston.transports.WinstonCloudwatch
+
+--next
+
+-main nodemailer.IntTest
+-js bin/nodemailer-inttest.js
