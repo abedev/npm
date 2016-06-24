@@ -15,7 +15,7 @@ typedef MailOptions = {
 	text : String,
 	?html : String,
 	?headers : EitherType<Dynamic<String>, Array<{key : String, value : String}>>,
-	// attachments
+	?attachments: Array<Attachment>,
 	// alternatives
 	// envelope
 	?messageId : String,
