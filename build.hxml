@@ -122,3 +122,8 @@ npm.winston.transports.WinstonCloudwatch
 
 -main nodemailer.IntTest
 -js bin/nodemailer-inttest.js
+
+--next
+
+-main yargs.IntTest
+-js bin/yargs-inttest.js
