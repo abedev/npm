@@ -75,6 +75,8 @@ npm.mssql.Request
 npm.mssql.RequestError
 npm.mssql.Transaction
 npm.mssql.TransactionError
+npm.nodegit.Clone
+npm.nodegit.Repository
 npm.NodeMailer
 npm.PG
 npm.pg.CancelConfig
