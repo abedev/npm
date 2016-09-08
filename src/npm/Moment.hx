@@ -74,22 +74,22 @@ extern class BaseMoment<T : BaseMoment<Dynamic>> {
   function millisecond(setTo : Float) : T;
   @:overload(function() : Float {})
   function milliseconds(setTo : Float) : T;
-  @:overload(function() : Float {})
-  function second(setTo : Float) : T;
-  @:overload(function() : Float {})
-  function seconds(setTo : Float) : T;
-  @:overload(function() : Float {})
-  function minute(setTo : Float) : T;
-  @:overload(function() : Float {})
-  function minutes(setTo : Float) : T;
-  @:overload(function() : Float {})
-  function hour(setTo : Float) : T;
-  @:overload(function() : Float {})
-  function hours(setTo : Float) : T;
-  @:overload(function() : Float {})
-  function date(setTo : Float) : T;
-  @:overload(function() : Float {})
-  function dates(setTo : Float) : T;
+  @:overload(function() : Int {})
+  function second(setTo : Int) : T;
+  @:overload(function() : Int {})
+  function seconds(setTo : Int) : T;
+  @:overload(function() : Int {})
+  function minute(setTo : Int) : T;
+  @:overload(function() : Int {})
+  function minutes(setTo : Int) : T;
+  @:overload(function() : Int {})
+  function hour(setTo : Int) : T;
+  @:overload(function() : Int {})
+  function hours(setTo : Int) : T;
+  @:overload(function() : Int {})
+  function date(setTo : Int) : T;
+  @:overload(function() : Int {})
+  function dates(setTo : Int) : T;
   @:overload(function() : Int {})
   function day(setTo : Int) : T;
   @:overload(function() : Int {})
