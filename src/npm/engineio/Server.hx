@@ -21,7 +21,7 @@ extern class Server extends js.node.events.EventEmitter<Server> {
   // TODO internal only?
   function handleUpgrade(request : js.node.http.ClientRequest, stream : js.node.Stream<Dynamic>, buffer : js.node.Buffer) : Server;
 
-  @:override(function(server : js.node.http.Server, options : ServerAttachOptions) : Server {})
+  @:overload(function(server : js.node.http.Server, options : ServerAttachOptions) : Server {})
   function attach(server : js.node.http.Server) : Server;
 
   // TODO is return type correct?

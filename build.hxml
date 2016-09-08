@@ -25,6 +25,8 @@ npm.ForeverMonitor
 npm.FsExtra
 npm.GM
 npm.Hashids
+npm.Intercom
+npm.intercom.Users
 npm.JSYaml
 npm.jsyaml.DumpOptions
 npm.jsyaml.LoadOptions

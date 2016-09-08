@@ -2,8 +2,8 @@ package npm.engineioclient;
 
 import haxe.extern.EitherType;
 
-typedef SocketOptions {
-  #if !norequire @:native("eio")
+typedef SocketOptions = {
+  #if !norequire
   ?agent : js.node.http.Agent,
   #end
   ?upgrade : Bool,

@@ -28,9 +28,9 @@ extern class Socket extends Emitter<Socket> {
   inline function onPong(callback : Callback0) : Socket
     return this.on("pong", callback);
 
-  @:override(function(message : MessageType, options : SendOptions, callback : Callback0) : Socket {})
-  @:override(function(message : MessageType, callback : Callback0) : Socket {})
-  @:override(function(message : MessageType, options : SendOptions) : Socket {})
+  @:overload(function(message : MessageType, options : SendOptions, callback : Callback0) : Socket {})
+  @:overload(function(message : MessageType, callback : Callback0) : Socket {})
+  @:overload(function(message : MessageType, options : SendOptions) : Socket {})
   function send(message : MessageType) : Socket;
 
   function close() : Socket;
