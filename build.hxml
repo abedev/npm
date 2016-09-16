@@ -13,6 +13,7 @@
 -js _
 npm.AWS
 npm.AWSCloudFrontSign
+npm.aws.ManagedUpload
 npm.aws.S3
 npm.BCryptjs
 npm.Busboy
