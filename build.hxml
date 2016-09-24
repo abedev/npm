@@ -1,15 +1,20 @@
 -cp src
+-cp int-test
+-lib hxnodejs
+
+--each
+
 --no-output
 -D doc-gen
 -D display
 -D dox
 -dce no
--lib hxnodejs
 -xml xml/js.xml
 -js _
 npm.Arango
 npm.AWS
 npm.AWSCloudFrontSign
+npm.aws.ManagedUpload
 npm.aws.S3
 npm.BCryptjs
 npm.Busboy
@@ -26,6 +31,8 @@ npm.ForeverMonitor
 npm.FsExtra
 npm.GM
 npm.Hashids
+npm.Intercom
+npm.intercom.Users
 npm.JSYaml
 npm.jsyaml.DumpOptions
 npm.jsyaml.LoadOptions
@@ -112,3 +119,15 @@ npm.winston.transports.Http
 npm.winston.transports.HttpOptions
 npm.winston.transports.ITransport
 npm.winston.transports.TransportOptions
+npm.winston.transports.WinstonAwsCloudwatch
+npm.winston.transports.WinstonCloudwatch
+
+--next
+
+-main nodemailer.IntTest
+-js bin/nodemailer-inttest.js
+
+--next
+
+-main yargs.IntTest
+-js bin/yargs-inttest.js
