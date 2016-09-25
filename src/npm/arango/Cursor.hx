@@ -5,8 +5,8 @@ import js.Promise;
 extern class Cursor {
   var count(default, null) : Int;
 
-  function all() : Array<Dynamic>;
-  function next() : Dynamic;
+  function all() : Promise<Array<Dynamic>>;
+  function next() : Promise<Dynamic>;
   function hasNext() : Bool;
 
   @:overload(function(fn : Dynamic -> Void) : Promise<Dynamic> {})
