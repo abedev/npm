@@ -30,15 +30,12 @@ extern class Sequelize {
   function sync(?options : SyncOptions) : Promise<Sequelize>;
   //function drop(?options : DropOptions) : Promise<?>; // TODO
   //function authenticate() : Promise<?> // TODO
-  function fn(functionName : String, args : haxe.extern.Rest<FunctionColumn>) : SequelizeFunction;
-  function col(colName : String) : FunctionColumn;
   function close() : Void;
   //cast(val, type) -> Sequelize.cast
   //literal(val) -> Sequelize.literal
   //and(args) -> Sequelize.and
   //or(args) -> Sequelize.or
   //json(conditions, [value]) -> Sequelize.json
-  //where(attr, [comparator='='], logic) -> Sequelize.where
   function transaction(?options : TransactionOptions, ?callback : Transaction -> Promise<Dynamic>) : Promise<Transaction>;
 
   // TODO return type is not correct but works with the current `where` condition
@@ -46,6 +43,10 @@ extern class Sequelize {
   // TODO return type is not correct but works with the current `where` condition
   static function or(conditions : haxe.extern.Rest<{}>) : {};
 
+  static function fn(functionName : String, args : haxe.extern.Rest<Dynamic>) : SequelizeFunction;
+  static function col(colName : String) : FunctionColumn;
+  @:overload(function(attr: Dynamic, logic: Dynamic) : {} {})
+  static function where(attr: Dynamic, comparator: Dynamic, logic: Dynamic) : {};
   static function STRING(?length : Int, ?binary : Bool) : DataType;
   static function CHAR(?length : Int, ?binary : Bool) : DataType;
   static function INTEGER(?length : Int) : DataType;
