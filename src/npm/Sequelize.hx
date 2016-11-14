@@ -32,7 +32,6 @@ extern class Sequelize {
   //function authenticate() : Promise<?> // TODO
   function close() : Void;
   //cast(val, type) -> Sequelize.cast
-  //literal(val) -> Sequelize.literal
   //and(args) -> Sequelize.and
   //or(args) -> Sequelize.or
   //json(conditions, [value]) -> Sequelize.json
@@ -45,6 +44,7 @@ extern class Sequelize {
 
   static function fn(functionName : String, args : haxe.extern.Rest<Dynamic>) : SequelizeFunction;
   static function col(colName : String) : FunctionColumn;
+  static function literal(value: String) : {};
   @:overload(function(attr: Dynamic, logic: Dynamic) : {} {})
   static function where(attr: Dynamic, comparator: Dynamic, logic: Dynamic) : {};
   static function STRING(?length : Int, ?binary : Bool) : DataType;
