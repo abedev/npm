@@ -71,6 +71,11 @@ extern class Sequelize {
   static function VIRTUAL() : DataType;
   static function ENUM(value : haxe.extern.Rest<String>) : DataType;
   static function ARRAY(type : DataType) : DataType;
+
+  inline public static function clearNative(): Void {
+    var s = Sequelize;
+    untyped __js__('delete s.native');
+  }
 }
 
 typedef NumberOptions = {
