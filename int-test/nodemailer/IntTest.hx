@@ -37,7 +37,7 @@ class IntTest {
     };
 
     trace('Sending email to: ${params.emailAddress} with attachment: ${params.attachmentPath}');
-    transport.sendMail(mailOptions, function(err : js.Error, info : InfoResponse) {
+    transport.sendMail(mailOptions, function(err : Null<js.Error>, info : InfoResponse) {
       if (err != null) {
         trace('Failed to send mail');
         trace(err);
