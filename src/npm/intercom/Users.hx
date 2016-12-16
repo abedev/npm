@@ -1,6 +1,7 @@
 package npm.intercom;
 
 import js.Promise;
+import npm.intercom.Companies;
 
 extern class Users {
   public function create(options: UserCreateOptions): Promise<Dynamic>; // TODO return type
