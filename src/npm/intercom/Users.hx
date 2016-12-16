@@ -4,6 +4,7 @@ import js.Promise;
 
 extern class Users {
   public function create(options: UserCreateOptions): Promise<Dynamic>; // TODO return type
+  public function update(options: UserCreateOptions): Promise<Dynamic>; // TODO return type
   public function list(): Promise<Array<User>>; // TODO return type
   public function listBy(options: {?tag_id: String, ?segment: String}): Promise<Array<User>>; // TODO return type
   @:overload(function(options: {email: String}): Promise<Array<User>> {})
@@ -13,7 +14,16 @@ extern class Users {
 }
 
 typedef UserCreateOptions = {
-  email: String,
+  ?user_id: String,
+  ?email: String,
+  ?signed_up_at: Float,
+  ?name: String,
+  ?last_seen_ip: String,
+  ?last_seen_user_agent: String,
+  ?companies: Array<Company>,
+  ?last_request_at: Float,
+  ?unsubscribed_from_emails: Bool,
+  ?update_last_request_at: Bool,
   ?custom_attributes: {}
 }
 
