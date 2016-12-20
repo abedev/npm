@@ -12,9 +12,9 @@ extern class Companies {
 }
 
 typedef CompanyCreateOptions = {
-  company_id: String,
-  name: String,
-  custom_attributes: {}
+  ?company_id: String,
+  ?name: String,
+  ?custom_attributes: {}
 }
 
 typedef Company = {

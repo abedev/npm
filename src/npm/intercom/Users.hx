@@ -21,11 +21,11 @@ typedef UserCreateOptions = {
   ?name: String,
   ?last_seen_ip: String,
   ?last_seen_user_agent: String,
-  ?companies: Array<Company>,
+  ?companies: Array<CompanyCreateOptions>,
   ?last_request_at: Float,
   ?unsubscribed_from_emails: Bool,
   ?update_last_request_at: Bool,
-  ?custom_attributes: {}
+  ?custom_attributes: {},
 }
 
 typedef User = {
