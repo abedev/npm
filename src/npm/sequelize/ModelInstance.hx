@@ -25,7 +25,7 @@ extern class ModelInstance<T : ModelInstance<T>> {
   function save(?options : { ?fields : {}, ?silent : Bool, ?validate : Bool, ?transaction : Transaction }) : Promise<T>; // either ValidationError or ModelInstance
   function reload() : Promise<T>;
   function update(updated : Dynamic, options : Dynamic) : Promise<T>; // TODO
-  function destroy(?options : ModelDestroyOptions) : Promise<Void>; // TODO
+  function destroy(?options : ModelInstanceDestroyOptions): Promise<Void>;
   //restore([options={}]) -> Promise<undefined> // TODO
   //increment(fields, [options]) -> Promise<this> // TODO
   //decrement(fields, [options]) -> Promise // TODO
