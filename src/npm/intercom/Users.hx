@@ -26,6 +26,7 @@ typedef UserCreateOptions = {
   ?unsubscribed_from_emails: Bool,
   ?update_last_request_at: Bool,
   ?custom_attributes: {},
+  ?created_at: Float
 }
 
 typedef User = {
