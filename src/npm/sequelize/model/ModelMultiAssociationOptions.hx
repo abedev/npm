@@ -1,4 +1,4 @@
-package npm.sequelize;
+package npm.sequelize.model;
 
 import haxe.extern.EitherType;
 

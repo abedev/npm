@@ -1,4 +1,4 @@
-package npm.sequelize;
+package npm.sequelize.modelinstance;
 
 typedef ModelInstanceDestroyOptions = {
   ?force: Bool,
