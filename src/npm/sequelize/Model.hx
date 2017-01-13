@@ -1,3 +1,3 @@
 package npm.sequelize;
 
-typedef Model = npm.sequelize.model.Model;
+typedef Model<T : ModelInstance<T>> = npm.sequelize.model.Model<T>;
