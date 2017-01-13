@@ -13,10 +13,10 @@ extern class Model<T : ModelInstance<T>> {
   function drop(?options : ModelDropOptions) : Promise<Void>;
 
   // Query functions
-  function findAll(options : ModelFindOptions) : Promise<Array<T>>;
-  function findOne(options : ModelFindOptions) : Promise<T>;
-  function findAndCount(options : ModelFindOptions) : Promise<{ rows: Array<T>, count: Int }>;
-  function count(options : ModelCountOptions) : Promise<Int>;
+  function findAll(?options : ModelFindOptions) : Promise<Array<T>>;
+  function findOne(?options : ModelFindOptions) : Promise<T>;
+  function findAndCount(?options : ModelFindOptions) : Promise<{ rows: Array<T>, count: Int }>;
+  function count(?options : ModelCountOptions) : Promise<Int>;
 
   // CUD functions
   function build(values : {}, ?options: ModelBuildOptions) : T;
