@@ -1,7 +1,9 @@
 package npm.sequelize;
 
 import haxe.extern.EitherType;
+
 import npm.common.StringBool;
+import npm.sequelize.model.Model;
 
 typedef ColumnOptions = {
   ?type : DataType,

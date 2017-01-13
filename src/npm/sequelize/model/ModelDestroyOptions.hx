@@ -1,4 +1,4 @@
-package npm.sequelize;
+package npm.sequelize.model;
 
 typedef ModelDestroyOptions = {
   ?where: {},

@@ -2,6 +2,8 @@ package npm.sequelize;
 
 import haxe.extern.EitherType;
 
+import npm.sequelize.model.ModelFindOptions;
+
 typedef ModelOptions = {
   ?paranoid : Bool,
   ?timestamps : Bool,
@@ -22,7 +24,7 @@ typedef ModelOptions = {
   ?classMethods : Dynamic<haxe.Constraints.Function>,
   ?schema : String,
   ?scopes : {},
-  ?defaultScope : ModelQuery,
+  ?defaultScope : ModelFindOptions,
   ?engine : String,
   ?charset : String,
   ?comment : String,

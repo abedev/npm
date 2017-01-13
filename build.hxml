@@ -105,6 +105,38 @@ npm.request.ResponseBody
 npm.request.Writable
 npm.SearchIndex
 npm.Sequelize
+npm.sequelize.model.Model
+npm.sequelize.model.ModelAssociationOptions
+npm.sequelize.model.ModelBuildOptions
+npm.sequelize.model.ModelBulkCreateOptions
+npm.sequelize.model.ModelCountOptions
+npm.sequelize.model.ModelCreateOptions
+npm.sequelize.model.ModelDestroyOptions
+npm.sequelize.model.ModelDropOptions
+npm.sequelize.model.ModelFindOptions
+npm.sequelize.model.ModelIncludeOptions
+npm.sequelize.model.ModelMultiAssociationOptions
+npm.sequelize.model.ModelUpdateOptions
+npm.sequelize.modelinstance.ModelInstance
+npm.sequelize.modelinstance.ModelInstanceDestroyOptions
+npm.sequelize.modelinstance.ModelInstanceSaveOptions
+npm.sequelize.modelinstance.ModelInstanceSetOptions
+npm.sequelize.modelinstance.ModelInstanceValidateOptions
+npm.sequelize.ColumnOptions
+npm.sequelize.DatabaseDialect
+npm.sequelize.DatabaseOptions
+npm.sequelize.DataType
+npm.sequelize.FunctionColumn
+npm.sequelize.LiteralValue
+npm.sequelize.ModelOptions
+npm.sequelize.QueryInterface
+npm.sequelize.QueryOptions
+npm.sequelize.SequelizeFunction
+npm.sequelize.SyncOptions
+npm.sequelize.Transaction
+npm.sequelize.TransactionOptions
+npm.sequelize.Validation
+npm.sequelize.ValidationError
 npm.Temp
 npm.winston.Logger
 npm.winston.LoggerOptions
@@ -130,3 +162,7 @@ npm.winston.transports.WinstonCloudwatch
 
 -main yargs.IntTest
 -js bin/yargs-inttest.js
+
+--next
+
+-cmd echo Build success

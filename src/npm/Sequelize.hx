@@ -1,52 +1,23 @@
 package npm;
 
-import npm.sequelize.*;
+import npm.sequelize.ColumnOptions;
+import npm.sequelize.DataType;
+import npm.sequelize.DatabaseOptions;
+import npm.sequelize.FunctionColumn;
+import npm.sequelize.ModelOptions;
+import npm.sequelize.QueryInterface;
+import npm.sequelize.QueryOptions;
+import npm.sequelize.SequelizeFunction;
+import npm.sequelize.SyncOptions;
+import npm.sequelize.Transaction;
+import npm.sequelize.TransactionOptions;
+import npm.sequelize.model.Model;
+import npm.sequelize.modelinstance.ModelInstance;
+
 import js.Promise;
 
 @:jsRequire("sequelize")
 extern class Sequelize {
-  @:overload(function(connectionstring : String) : Void {})
-  @:overload(function(connectionstring : String, options : DatabaseOptions) : Void {})
-  function new(database : String, username : String, password : String, ?options : DatabaseOptions) : Void;
-  function define<T : ModelInstance<T>>(modelName : String, attributes : Dynamic<ColumnOptions>, ?options : ModelOptions) : Model<T>;
-  function getDialect() : String;
-  function getQueryInterface() : QueryInterface;
-  //function getMigrator(?options : MigratorOptions, ?force : Bool) : Migrator; // TODO
-  function model<T : ModelInstance<T>>(modelName : String) : Model<T>;
-  function isDefined(modelName : String) : Bool;
-  inline function importModel<T : ModelInstance<T>>(path : String) : Model<T>
-    return untyped this["import"](path);
-
-  @:overload(function(sql : String, options : QueryOptions) : Promise<Array<Dynamic>> {})
-  @:overload(function(sql : String, model : Model<Dynamic>, options : QueryOptions) : Promise<Array<Dynamic>> {})
-  @:overload(function(sql : String, model : Model<Dynamic>) : Promise<Array<Dynamic>> {})
-  function query(sql : String) : Promise<Array<Dynamic>>;
-  //function set(variables : {}, ?options : { transaction : Transaction }) : Promise<?>; // TODO
-  function escape(value : String) : String;
-  //function createSchema(schema : String) : Promise<?>; // TODO
-  //function showAllSchemas() : Promise<?>; // TODO
-  //function dropSchema(schema : String) : Promise<?>; // TODO
-  //function dropAllSchemas() : Promise<?>; // TODO
-  function sync(?options : SyncOptions) : Promise<Sequelize>;
-  //function drop(?options : DropOptions) : Promise<?>; // TODO
-  //function authenticate() : Promise<?> // TODO
-  function close() : Void;
-  //cast(val, type) -> Sequelize.cast
-  //and(args) -> Sequelize.and
-  //or(args) -> Sequelize.or
-  //json(conditions, [value]) -> Sequelize.json
-  function transaction(?options : TransactionOptions, ?callback : Transaction -> Promise<Dynamic>) : Promise<Transaction>;
-
-  // TODO return type is not correct but works with the current `where` condition
-  static function and(conditions : haxe.extern.Rest<{}>) : {};
-  // TODO return type is not correct but works with the current `where` condition
-  static function or(conditions : haxe.extern.Rest<{}>) : {};
-
-  static function fn(functionName : String, args : haxe.extern.Rest<Dynamic>) : SequelizeFunction;
-  static function col(colName : String) : FunctionColumn;
-  static function literal(value: String) : {};
-  @:overload(function(attr: Dynamic, logic: Dynamic) : {} {})
-  static function where(attr: Dynamic, comparator: Dynamic, logic: Dynamic) : {};
   static function STRING(?length : Int, ?binary : Bool) : DataType;
   static function CHAR(?length : Int, ?binary : Bool) : DataType;
   static function INTEGER(?length : Int) : DataType;
@@ -71,6 +42,52 @@ extern class Sequelize {
   static function VIRTUAL() : DataType;
   static function ENUM(value : haxe.extern.Rest<String>) : DataType;
   static function ARRAY(type : DataType) : DataType;
+
+  @:overload(function(connectionstring : String) : Void {})
+  @:overload(function(connectionstring : String, options : DatabaseOptions) : Void {})
+  function new(database : String, username : String, password : String, ?options : DatabaseOptions) : Void;
+
+  function getDialect() : String;
+
+  function getQueryInterface() : QueryInterface;
+
+  function define<T : ModelInstance<T>>(modelName : String, attributes : Dynamic<ColumnOptions>, ?options : ModelOptions) : Model<T>;
+
+  function model<T : ModelInstance<T>>(modelName : String) : Model<T>;
+
+  function isDefined(modelName : String) : Bool;
+
+  inline function importModel<T : ModelInstance<T>>(path : String) : Model<T> {
+    return untyped this["import"](path);
+  }
+
+  @:overload(function(sql : String, options : QueryOptions) : Promise<Array<Dynamic>> {})
+  @:overload(function(sql : String, model : Model<Dynamic>, options : QueryOptions) : Promise<Array<Dynamic>> {})
+  @:overload(function(sql : String, model : Model<Dynamic>) : Promise<Array<Dynamic>> {})
+  function query(sql : String) : Promise<Array<Dynamic>>;
+
+  function escape(value : String) : String;
+
+  function sync(?options : SyncOptions) : Promise<Sequelize>;
+
+  function close() : Void;
+
+  function transaction(?options : TransactionOptions, ?callback : Transaction -> Promise<Dynamic>) : Promise<Transaction>;
+
+  // TODO return type is not correct but works with the current `where` condition
+  static function and(conditions : haxe.extern.Rest<{}>) : {};
+
+  // TODO return type is not correct but works with the current `where` condition
+  static function or(conditions : haxe.extern.Rest<{}>) : {};
+
+  static function fn(functionName : String, args : haxe.extern.Rest<Dynamic>) : SequelizeFunction;
+
+  static function col(colName : String) : FunctionColumn;
+
+  static function literal(value: String) : {};
+
+  @:overload(function(attr: Dynamic, logic: Dynamic) : {} {})
+  static function where(attr: Dynamic, comparator: Dynamic, logic: Dynamic) : {};
 
   inline public static function clearNative(): Void {
     var s = Sequelize;
