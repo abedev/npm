@@ -40,6 +40,6 @@ extern class WebSocket extends EventEmitter<WebSocket> {
   public function removeEventListener(type: String, listener: haxe.Constraints.Function): Void {}
 
   public function resume(): Void {}
-  public function send(data: Dynamic, options: WebSocketSendOptions, callback: Void -> Void): Void {}
+  public function send(data: Dynamic, ?options: WebSocketSendOptions, ?callback: Void -> Void): Void {}
   public function terminate(): Void {}
 }
