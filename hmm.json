@@ -1,0 +1,25 @@
+{
+  "dependencies": [
+    {
+      "name": "hxnodejs",
+      "type": "git",
+      "dir": null,
+      "ref": "19a1e2b",
+      "url": "git@github.com:HaxeFoundation/hxnodejs"
+    },
+    {
+      "name": "thx.core",
+      "type": "git",
+      "dir": null,
+      "ref": "59f36ae",
+      "url": "git@github.com:fponticelli/thx.core"
+    },
+    {
+      "name": "thx.promise",
+      "type": "git",
+      "dir": null,
+      "ref": "65379a9",
+      "url": "git@github.com:fponticelli/thx.promise"
+    }
+  ]
+}
