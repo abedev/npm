@@ -165,6 +165,8 @@ npm.winston.transports.ITransport
 npm.winston.transports.TransportOptions
 npm.winston.transports.WinstonAwsCloudwatch
 npm.winston.transports.WinstonCloudwatch
+npm.WebSocket
+npm.ws.Server
 
 --next
 
