@@ -1,3 +1,9 @@
+# Node.js libs
 node_modules/
+
+# Haxe libs
+.haxelib/
+
+# Project files
 xml/
 bin/

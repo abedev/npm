@@ -1,4 +1,4 @@
-package npm.aws;
+package npm.aws.s3;
 
 import haxe.extern.EitherType;
 import js.node.Buffer;

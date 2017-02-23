@@ -1,8 +1,12 @@
 -cp src
 -cp int-test
 -lib hxnodejs
+-lib thx.core
+-lib thx.promise
 
 --each
+
+# npm (externs for raw js libs)
 
 --no-output
 -D doc-gen
@@ -13,8 +17,13 @@
 -js _
 npm.AWS
 npm.AWSCloudFrontSign
-npm.aws.ManagedUpload
-npm.aws.S3
+npm.aws.Request
+npm.aws.s3.DeleteParams
+npm.aws.s3.GetObjectOptions
+npm.aws.s3.ManagedUpload
+npm.aws.s3.PutParams
+npm.aws.s3.S3
+npm.aws.sqs.SQS
 npm.BCryptjs
 npm.Busboy
 npm.Chalk
@@ -159,14 +168,37 @@ npm.winston.transports.WinstonCloudwatch
 
 --next
 
+# npmx (haxe wrappers for raw js externs)
+
+--no-output
+-dce no
+-lib thx.core
+-lib thx.promise
+-js _
+npmx.aws.sqs.SQSX
+npmx.aws.sqs.SQSXListener
+
+--next
+
+# Node mailer integration test
+
 -main nodemailer.IntTest
 -js bin/nodemailer-inttest.js
 
 --next
+
+# Yargs integration test
 
 -main yargs.IntTest
 -js bin/yargs-inttest.js
 
 --next
 
--cmd echo Build success
+# AWS SQS integration test
+
+-main aws.sqs.TestSQS
+-js bin/sqs-inttest.js
+
+--next
+
+-cmd echo build complete!

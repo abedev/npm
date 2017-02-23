@@ -1,4 +1,4 @@
-package npm.aws;
+package npm.aws.s3;
 
 import js.node.events.EventEmitter;
 import npm.common.Callback;
