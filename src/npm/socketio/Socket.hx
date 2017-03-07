@@ -1,22 +1,33 @@
 package npm.socketio;
 
 import js.Error;
+import js.node.events.EventEmitter;
 
-extern class Socket {
-  var rooms : Array<String>;
+extern class Socket extends EventEmitter<Socket> {
+  var id : String;
+  var rooms : Dynamic<String>;
   var client : Client;
   var conn : Socket;
-  var id : String;
+  var request : Request;
 
-  @:overload(function(name : String, a0 : Dynamic, a1 : Dynamic, a2 : Dynamic, a3 : Dynamic) : Socket {})
-  @:overload(function(name : String, a0 : Dynamic, a1 : Dynamic, a2 : Dynamic) : Socket {})
-  @:overload(function(name : String, a0 : Dynamic, a1 : Dynamic) : Socket {})
-  @:overload(function(name : String, a0 : Dynamic) : Socket {})
-  function emit(name : String) : Socket;
+  function use(fn : PacketMiddleware) : Void;
 
-  function join(name : String, ?fn : Error -> Void) : Socket;
-  function leave(name : String, ?fn : Error -> Void) : Socket;
+  // function send (alias for emit)
+  // function emit (incompletely handled by extends EventEmitter (no ack))
+  // function on (extends EventEmitter)
 
-  function in(room : String) : Socket;
+  @:overload(function(rooms : Array<String>, ?fn : Null<Error> -> Void) : {} {})
+  function join(room : String, ?fn : Null<Error> -> Void) : Socket;
+
+  function leave(room : String, ?fn : Null<Error> -> Void) : Socket;
+
+  //function in(room : String) : Socket; // alias of "to"
   function to(room : String) : Socket;
+
+  function compress(value : Bool) : Socket;
+
+  function disconnect(close : Bool) : Socket;
+
+  var broadcast : Socket;
+  var volatile : Socket;
 }

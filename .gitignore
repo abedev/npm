@@ -4,6 +4,9 @@ node_modules/
 # Haxe libs
 .haxelib/
 
+# Editors
+.vscode/
+
 # Project files
 xml/
 bin/

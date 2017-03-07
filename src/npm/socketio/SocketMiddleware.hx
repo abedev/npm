@@ -1,3 +1,5 @@
 package npm.socketio;
 
-typedef SocketMiddleware = Socket -> NextSocket -> Void;
+import npm.socketio.Next;
+
+typedef SocketMiddleware = Socket -> Next -> Void;

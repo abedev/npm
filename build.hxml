@@ -150,6 +150,17 @@ npm.sequelize.Transaction
 npm.sequelize.TransactionOptions
 npm.sequelize.Validation
 npm.sequelize.ValidationError
+npm.socketio.Adapter
+npm.socketio.Client
+npm.socketio.Namespace
+npm.socketio.Next
+npm.socketio.PacketMiddleware
+npm.socketio.Server
+npm.socketio.Socket
+npm.socketio.SocketMiddleware
+npm.socketio.client.IO
+npm.socketio.client.Manager
+npm.socketio.client.Socket
 npm.Temp
 npm.winston.Logger
 npm.winston.LoggerOptions
