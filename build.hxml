@@ -17,6 +17,7 @@
 -js _
 npm.AWS
 npm.AWSCloudFrontSign
+npm.ajv.Ajv
 npm.aws.Request
 npm.aws.s3.DeleteParams
 npm.aws.s3.GetObjectOptions
@@ -41,11 +42,13 @@ npm.GM
 npm.Hashids
 npm.Intercom
 npm.intercom.Users
+npm.jsen.Jsen
+npm.JsonWebToken
 npm.JSYaml
 npm.jsyaml.DumpOptions
 npm.jsyaml.LoadOptions
-npm.JsonWebToken
 npm.JSZip
+npm.jsonschemarefparser.RefParser
 npm.LevelDB
 npm.lf.Binder
 npm.lf.ConstraintAction
@@ -193,6 +196,24 @@ npmx.aws.sqs.SQSXListener
 
 --next
 
+# ajv integration test
+-main ajv.IntTest
+-js bin/ajv-inttest.js
+
+--next
+
+# jsonschemarefparser integration test
+-main jsonschemarefparser.IntTest
+-js bin/jsonschemarefparser-inttest.js
+
+--next
+
+# jsen integration test
+-main jsen.IntTest
+-js bin/jsen-inttest.js
+
+--next
+
 # Node mailer integration test
 
 -main nodemailer.IntTest
@@ -209,7 +230,7 @@ npmx.aws.sqs.SQSXListener
 
 # AWS SQS integration test
 
--main aws.sqs.TestSQS
+-main aws.sqs.IntTest
 -js bin/sqs-inttest.js
 
 --next

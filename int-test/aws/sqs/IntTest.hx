@@ -9,7 +9,7 @@ import npm.aws.sqs.SQS;
 import npmx.aws.sqs.SQSX;
 import npmx.aws.sqs.SQSXListener;
 
-class TestSQS {
+class IntTest {
   public static function main() {
     //testSimpleWorkflow();
 
