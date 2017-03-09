@@ -2,4 +2,4 @@ package npm.jayschema;
 
 import npm.jayschema.Errors;
 
-typedef Loader = String -> (Null<ValidationError> -> {} -> Void) -> Void;
+typedef Loader = String -> (Null<SchemaLoaderError> -> {} -> Void) -> Void;

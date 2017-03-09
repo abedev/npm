@@ -42,7 +42,9 @@ npm.GM
 npm.Hashids
 npm.Intercom
 npm.intercom.Users
+npm.jayschema.Errors
 npm.jayschema.JaySchema
+npm.jayschema.Loader
 npm.jsen.Jsen
 npm.JsonWebToken
 npm.JSYaml
