@@ -3,7 +3,7 @@ package npm;
 import haxe.extern.EitherType;
 import js.Error;
 
-@:jsRequire('yargs/yargs')
+@:jsRequire("yargs/yargs")
 extern class Yargs {
   @:selfCall
   public function new(args : Array<String>) { }

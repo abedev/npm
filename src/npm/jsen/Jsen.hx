@@ -1,7 +1,7 @@
 package npm.jsen;
 
 #if(norequire) @:native("jsen")
-#else @:jsRequire('jsen') #end
+#else @:jsRequire("jsen") #end
 extern class Jsen {
   @:selfCall
   static function jsen(schema : {}) : JsenValidator;

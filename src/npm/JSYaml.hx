@@ -2,8 +2,8 @@ package npm;
 
 import npm.jsyaml.*;
 
-#if norequire @:native('jsyaml')
-#else @:jsRequire('js-yaml') #end
+#if norequire @:native("jsyaml")
+#else @:jsRequire("js-yaml") #end
 extern class JSYaml {
   public static function safeLoad(input : String, ?options : LoadOptions) : {};
   public static function load(input : String, ?options : LoadOptions) : {};

@@ -60,8 +60,8 @@ typedef AjvOptions = {
   }
 };
 
-#if(norequire) @:native('Ajv')
-#else @:jsRequire('ajv') #end
+#if(norequire) @:native("Ajv")
+#else @:jsRequire("ajv") #end
 extern class Ajv {
   function new(?options : AjvOptions) : Void;
 

@@ -2,7 +2,7 @@ package npm.jayschema;
 
 import npm.jayschema.Errors;
 
-@:jsRequire('jayschema')
+@:jsRequire("jayschema")
 extern class JaySchema {
   function new(?loader : Loader) {}
 
