@@ -42,6 +42,7 @@ npm.GM
 npm.Hashids
 npm.Intercom
 npm.intercom.Users
+npm.jayschema.JaySchema
 npm.jsen.Jsen
 npm.JsonWebToken
 npm.JSYaml
@@ -202,9 +203,15 @@ npmx.aws.sqs.SQSXListener
 
 --next
 
-# jsonschemarefparser integration test
--main jsonschemarefparser.IntTest
--js bin/jsonschemarefparser-inttest.js
+# aws.sqs
+
+-main aws.sqs.IntTest
+-js bin/sqs-inttest.js
+
+--next
+
+-main jayschema.IntTest
+-js bin/jayschema-inttest.js
 
 --next
 
@@ -214,24 +221,23 @@ npmx.aws.sqs.SQSXListener
 
 --next
 
-# Node mailer integration test
+# jsonschemarefparser integration test
+-main jsonschemarefparser.IntTest
+-js bin/jsonschemarefparser-inttest.js
+
+--next
+
+# nodemailer
 
 -main nodemailer.IntTest
 -js bin/nodemailer-inttest.js
 
 --next
 
-# Yargs integration test
+# yargs
 
 -main yargs.IntTest
 -js bin/yargs-inttest.js
-
---next
-
-# AWS SQS integration test
-
--main aws.sqs.IntTest
--js bin/sqs-inttest.js
 
 --next
 
