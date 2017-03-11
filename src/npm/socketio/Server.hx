@@ -9,7 +9,7 @@ extern class Server extends EventEmitter<Server> {
   @:overload(function(srv : HttpServer, ?options : ServerOptions) : Void {})
   @:selfCall function new(?options : ServerOptions) : Void;
 
-  var sockets : Namespace;
+  var sockets(default, null) : Namespace;
 
   @:overload(function() : Bool {})
   function serveClient(v : Bool) : Server;
@@ -34,6 +34,9 @@ extern class Server extends EventEmitter<Server> {
   function onconnection(socket : Socket) : Server;
 
   function of(nsp : String) : Namespace;
+
+  @:native("in")
+  function in_(room : String) : Namespace;
 
   function close(?cb : haxe.Constraints.Function) : Void;
 }

@@ -21,7 +21,8 @@ extern class Socket extends EventEmitter<Socket> {
 
   function leave(room : String, ?fn : Null<Error> -> Void) : Socket;
 
-  //function in(room : String) : Socket; // alias of "to"
+  @:native("in")
+  function in_(room : String) : Socket;
   function to(room : String) : Socket;
 
   function compress(value : Bool) : Socket;

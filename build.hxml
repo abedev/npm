@@ -236,6 +236,12 @@ npmx.aws.sqs.SQSXListener
 
 --next
 
+# socketio
+-main socketio.IntTest
+-js bin/socketio-inttest.js
+
+--next
+
 # yargs
 
 -main yargs.IntTest

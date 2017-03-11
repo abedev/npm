@@ -1,0 +1,49 @@
+<html>
+  <body>
+    <h1>Socket.io test</h1>
+    <ul id="messages">
+    </ul>
+    <button id="room-button" type="button">Join room</button>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      $(function() {
+        var socket = io.connect();
+        var $roomButton = $('#room-button');
+        var isInRoom = false;
+
+        function writeMessage(message) {
+          var $el = $('<li>').append(message);
+          $('#messages').append($el);
+        }
+
+        socket.on('greeting', writeMessage);
+        socket.on('news', writeMessage);
+
+        socket.on('joined-room', function(data) {
+          writeMessage(data);
+          isInRoom = true;
+          $roomButton.prop('disabled', false).text('Leave room');
+        });
+
+        socket.on('left-room', function(data) {
+          writeMessage(data);
+          isInRoom = false;
+          $roomButton.prop('disabled', false).text('Join room');
+        });
+
+        $roomButton.on('click', function() {
+          if (isInRoom) {
+            $roomButton.prop('disabled', true).text('Leaving room...');
+            socket.emit('leave-room');
+          } else {
+            $roomButton.prop('disabled', true).text('Joining room...');
+            socket.emit('join-room');
+          }
+        });
+
+        socket.emit("get-news");
+      });
+    </script>
+  </body>
+</html>
