@@ -168,6 +168,11 @@ npm.socketio.client.IO
 npm.socketio.client.Manager
 npm.socketio.client.Socket
 npm.Temp
+npm.Twilio
+npm.twilio.Message
+npm.twilio.MessageOptions
+npm.twilio.Messages
+npm.twilio.RestClient
 npm.winston.Logger
 npm.winston.LoggerOptions
 npm.winston.transports.Console
