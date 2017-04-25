@@ -13,10 +13,13 @@ typedef VerifyCallback = Bool -> Int -> String -> Void;
 typedef DeflateOptions = {
   ?serverNoContextTakeover: Bool, // Whether to use context take over or not.
   ?clientNoContextTakeover: Bool, // The value to be requested to clients whether to use context take over or not.
-  ?serverMaxWindowBits: Int, // TODO: confirm this... The value of windowBits.
-  ?clientMaxWindowBits: Int, // TODO: again... The value of max windowBits to be requested to clients.
-  ?memLevel: Int, // TODO: more... The value of memLevel.
-  ?threshold: Int // TODO: Payloads smaller than this will not be compressed. Defaults to 1024 bytes.
+  
+  // TODO: the following options probably also handle `Float`,
+  // but I don't know enough of the context to know if that's a good idea
+  ?serverMaxWindowBits: Int, // The value of windowBits.
+  ?clientMaxWindowBits: Int, // The value of max windowBits to be requested to clients.
+  ?memLevel: Int, // The value of memLevel.
+  ?threshold: Int // Payloads smaller than this will not be compressed. Defaults to 1024 bytes.
 };
 
 // one of `port`, `server`, or `noserver` is required
@@ -34,19 +37,18 @@ typedef BaseOptions = {
 };
 
 typedef WebSocketServerOptionsWithPort = { > BaseOptions,
-  port: Int, // The port where to bind the server.
-  ?server: EitherType<js.node.http.Server, js.node.https.Server>, // A pre-created Node.js HTTP server.
-  ?noServer: Bool // Enable no server mode.
+  port: Int // The port where to bind the server.
 };
 
 typedef WebSocketServerOptionsWithServer = { > BaseOptions,
-  ?port: Int, // The port where to bind the server.
-  server: EitherType<js.node.http.Server, js.node.https.Server>, // A pre-created Node.js HTTP server.
-  ?noServer: Bool // Enable no server mode.
+  server: EitherType<js.node.http.Server, js.node.https.Server> // A pre-created Node.js HTTP server.
 };
 
 typedef WebSocketServerOptionsWithNoServer = { > BaseOptions,
   ?port: Int, // The port where to bind the server.
   ?server: EitherType<js.node.http.Server, js.node.https.Server>, // A pre-created Node.js HTTP server.
-  noServer: Bool // Enable no server mode.
+                                              
+  // it's not clear what happens if you say `noServer: false` without providing other options
+  // ...it probably throws
+  noServer: Bool // Enable no server mode
 };
