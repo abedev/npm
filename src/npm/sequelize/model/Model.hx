@@ -35,10 +35,10 @@ extern class Model<T : ModelInstance<T>> {
   function removeAttribute(attr : String) : Void;
 
   // Model association config functions
-  function hasOne<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelAssociationOptions) : Void; // check return type
-  function belongsTo<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelAssociationOptions) : Void; // check return type
-  function hasMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelMultiAssociationOptions) : Void; // check return type
-  function belongsToMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelMultiAssociationOptions) : Void; // check return type
+  function hasOne<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelAssociationOptions) : T;
+  function belongsTo<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelAssociationOptions) : T;
+  function hasMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelMultiAssociationOptions) : T;
+  function belongsToMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelMultiAssociationOptions) : T;
 
   // Scope functions
   @:overload(function (options : { method: EitherType<String, Array<Dynamic>> }) : Model<T> {})
