@@ -7,7 +7,7 @@ import js.Promise;
 
 extern class Model<T : ModelInstance<T>> {
   // Update database by creating table for this model
-  function sync() : Promise<Model<T>>;
+  function sync(?opts :ModelSyncOptions) : Promise<Model<T>>;
 
   // Drop table
   function drop(?options : ModelDropOptions) : Promise<Void>;
