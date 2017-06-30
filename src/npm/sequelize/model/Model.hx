@@ -22,6 +22,7 @@ extern class Model<T : ModelInstance<T>> {
   function build(values : {}, ?options: ModelBuildOptions) : T;
   function create(values : {}, ?options: ModelCreateOptions) : Promise<T>;
   function update(values : {}, options : ModelUpdateOptions) : Promise<Array<Int>>;
+  function upsert(values : {}, options : ModelUpdateOptions) : Promise<Array<Int>>;
   function bulkCreate(items : Array<{}>, ?options : ModelBulkCreateOptions) : Promise<Array<T>>;
   function destroy(options : ModelDestroyOptions) : Promise<Array<Int>>;
 
