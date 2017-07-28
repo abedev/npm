@@ -6,8 +6,8 @@ import js.Promise;
 
 @:jsRequire("sequelize", "Transaction")
 extern class Transaction {
-  public static var ISOLATION_LEVELS : ISOLATION_LEVELS;
-  public static var TYPES : TYPES;
+  public static var ISOLATION_LEVELS : IsolationLevels;
+  public static var TYPES : Types;
 
   function new(sequelize : Sequelize, ?options: TransactionOptions);
 

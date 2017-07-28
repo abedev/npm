@@ -1,13 +1,13 @@
 package npm.sequelize;
 
-typedef ISOLATION_LEVELS = {
+typedef IsolationLevels = {
   READ_UNCOMMITTED : String,
   READ_COMMITTED : String,
   REPEATABLE_READ : String,
   SERIALIZABLE : String
 };
 
-typedef TYPES = {
+typedef Types = {
   DEFERRED : String,
   IMMEDIATE : String,
   EXCLUSIVE : String
