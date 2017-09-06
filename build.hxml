@@ -77,6 +77,7 @@ npm.lf.schema.DatabasePragma
 npm.lf.schema.DataStoreType
 npm.lf.schema.Table
 npm.lf.schema.TableBuilder
+npm.MD5
 npm.Mime
 npm.Moment
 npm.MomentTimezone
