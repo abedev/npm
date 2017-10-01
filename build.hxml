@@ -168,6 +168,7 @@ npm.socketio.SocketMiddleware
 npm.socketio.client.IO
 npm.socketio.client.Manager
 npm.socketio.client.Socket
+npm.Sha1
 npm.Temp
 npm.Twilio
 npm.twilio.Message
