@@ -7,7 +7,7 @@ import js.Promise;
 
 extern class Model<T : ModelInstance<T>> {
   // Update database by creating table for this model
-  function sync() : Promise<Model<T>>;
+  function sync(?opts :ModelSyncOptions) : Promise<Model<T>>;
 
   // Drop table
   function drop(?options : ModelDropOptions) : Promise<Void>;
@@ -22,6 +22,7 @@ extern class Model<T : ModelInstance<T>> {
   function build(values : {}, ?options: ModelBuildOptions) : T;
   function create(values : {}, ?options: ModelCreateOptions) : Promise<T>;
   function update(values : {}, options : ModelUpdateOptions) : Promise<Array<Int>>;
+  function upsert(values : {}, options : ModelUpdateOptions) : Promise<Array<Int>>;
   function bulkCreate(items : Array<{}>, ?options : ModelBulkCreateOptions) : Promise<Array<T>>;
   function destroy(options : ModelDestroyOptions) : Promise<Array<Int>>;
 
@@ -35,10 +36,10 @@ extern class Model<T : ModelInstance<T>> {
   function removeAttribute(attr : String) : Void;
 
   // Model association config functions
-  function hasOne<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelAssociationOptions) : Void; // check return type
-  function belongsTo<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelAssociationOptions) : Void; // check return type
-  function hasMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelMultiAssociationOptions) : Void; // check return type
-  function belongsToMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelMultiAssociationOptions) : Void; // check return type
+  function hasOne<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelAssociationOptions) : Model<T>;
+  function belongsTo<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelAssociationOptions) : Model<T>;
+  function hasMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelMultiAssociationOptions) : Model<T>;
+  function belongsToMany<TOther : ModelInstance<TOther>>(other : Model<TOther>, ?options : ModelMultiAssociationOptions) : Model<T>;
 
   // Scope functions
   @:overload(function (options : { method: EitherType<String, Array<Dynamic>> }) : Model<T> {})
