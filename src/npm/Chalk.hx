@@ -39,7 +39,7 @@ extern class Chalk {
 
 @:callable
 extern class ChalkStyle {
-  @:selfCall()
+  @:selfCall
   function apply(value : String) : String;
 
   var reset : ChalkStyle;
